@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpbe08quey0ls"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_att55"]
+[ext_resource type="Texture2D" uid="uid://baxpe121knk6n" path="res://player/assets/player1/creature-sheet.png" id="2_6jgfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt7jx"]
+atlas = ExtResource("2_6jgfl")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vc1i"]
+atlas = ExtResource("2_6jgfl")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmily"]
+atlas = ExtResource("2_6jgfl")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf0mc"]
+atlas = ExtResource("2_6jgfl")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ap8lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt7jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vc1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmily")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf0mc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kckde"]
+radius = 11.0
+height = 34.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_att55")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ap8lr")
+animation = &"run"
+autoplay = "run"
+frame = 2
+frame_progress = 0.126811
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_kckde")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="SprintProgress" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -32.0
+offset_top = -28.0
+offset_right = 171.0
+offset_bottom = -1.0
+scale = Vector2(0.32, 0.239999)
+value = 100.0
+show_percentage = false

@@ -17,18 +17,13 @@ func random_tile():
 	for cell in cells:
 		var randi = random.randi_range(0, 100)
 		if randi < 2:
-			print("加入", cell )
 			tileMap.set_cell(1, cell, 0, Vector2i(5, 0))
 		elif randi < 4:
-			print("加入", cell )
 			tileMap.set_cell(1, cell, 0, Vector2i(5, 1))
 		elif randi < 6:
-			print("加入", cell )
 			tileMap.set_cell(1, cell, 0, Vector2i(5, 2))
 		elif randi < 8:
-			print("加入", cell )
 			tileMap.set_cell(1, cell, 0, Vector2i(6, 1))
 		elif randi < 10:
-			print("加入", cell )
 			tileMap.set_cell(1, cell, 0, Vector2i(6, 2))
 		pass
