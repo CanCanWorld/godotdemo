@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed = 4
 var sprintTime = 0
-@onready var anim = $AnimatedSprite2D
+@onready var playerAnim = $PlayerAnim
 @onready var ball = $RigidBody2D
 @onready var sprintProgress = $SprintProgress
 var sprint_time_sum = 0.5
@@ -13,6 +13,7 @@ var sprint_scale = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	choosePlayer("player1")
 	pass # Replace with function body.
 
 
@@ -30,27 +31,48 @@ func _process(delta: float) -> void:
 		sprintProgress.value = sprintTime * 100 / sprint_time_sum
 		print("冲刺中", sprintTime)
 		position += vector * speed * sprint_scale
-		anim.speed_scale = sprint_scale
+		playerAnim.speed_scale = sprint_scale
 		if sprintTime < 0:
 			sprint_time_sleep = sprint_time_sleep_sum
 	else :
 		#行走
-		anim.speed_scale = 1
+		print("行走")
+		playerAnim.speed_scale = 1
 		position += vector * speed
+		playerAnim.play()
 	if sprint_time_sleep > 0:
 		#等待冲刺冷却
 		sprint_time_sleep -= delta
 		print("冲刺冷却中", sprint_time_sleep)
-		sprintProgress.value = 100 - sprint_time_sleep/ sprint_time_sleep_sum * 100
+		sprintProgress.value = 100 - sprint_time_sleep / sprint_time_sleep_sum * 100
 		if sprint_time_sleep <= 0:
 			isCanSprint = true
-	print(vector.x)
-	if vector.x != 0:
+	if vector.x != 0||vector.y != 0:
 		#朝向
-		anim.flip_h = vector.x < 0
-		anim.play()
+		playerAnim.flip_h = vector.x < 0
 	else :
 		#停下
-		anim.stop()
+		print("停下")
+		playerAnim.stop()
 	move_and_slide()
+	pass
+	
+func choosePlayer(name: String):
+	playerAnim.sprite_frames.clear_all()
+	var sprite_frames_custom = SpriteFrames.new()
+	sprite_frames_custom.add_animation("run")
+	sprite_frames_custom.set_animation_loop("run", true	)
+	sprite_frames_custom.set_animation_speed("run", 15)
+	var texture_size = Vector2(192, 48)
+	var frame_size = Vector2(48, 48)
+	var full_texture = load("res://player/assets/" + name + "/creature-sheet.png")
+	var x_num = int(texture_size.x / frame_size.x)
+	var y_num = int(texture_size.y / frame_size.y)
+	for y in y_num:
+		for x in x_num:
+			var frame = AtlasTexture.new()
+			frame.atlas = full_texture
+			frame.region = Rect2(Vector2(x, y) * frame_size, frame_size)
+			sprite_frames_custom.add_frame("run", frame)
+	playerAnim.sprite_frames = sprite_frames_custom
 	pass

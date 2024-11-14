@@ -15,15 +15,16 @@ func random_tile():
 	var cells = tileMap.get_used_cells(0)
 	var random = RandomNumberGenerator.new()
 	for cell in cells:
-		var randi = random.randi_range(0, 100)
+		var randi = random.randf_range(0, 100)
+		print(randi)
 		if randi < 2:
-			tileMap.set_cell(1, cell, 0, Vector2i(5, 0))
+			tileMap.set_cell(1, cell, 0, Vector2i(6, 0))
 		elif randi < 4:
 			tileMap.set_cell(1, cell, 0, Vector2i(5, 1))
 		elif randi < 6:
-			tileMap.set_cell(1, cell, 0, Vector2i(5, 2))
-		elif randi < 8:
 			tileMap.set_cell(1, cell, 0, Vector2i(6, 1))
-		elif randi < 10:
+		elif randi < 6.5:
+			tileMap.set_cell(1, cell, 0, Vector2i(5, 2))
+		elif randi < 7:
 			tileMap.set_cell(1, cell, 0, Vector2i(6, 2))
 		pass
