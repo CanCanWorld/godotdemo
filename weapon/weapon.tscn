@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bunemdlrcpe8h"]
+
+[ext_resource type="Texture2D" uid="uid://cnhmbridhoxx6" path="res://weapon/assets/weapon1/weapon1.png" id="1_olsmu"]
+[ext_resource type="Shader" path="res://weapon/weapon_outline.gdshader" id="1_v5dj6"]
+[ext_resource type="Script" path="res://weapon/weapon.gd" id="1_wruhp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rcor"]
+shader = ExtResource("1_v5dj6")
+shader_parameter/outline_color = Color(7.568, 0.259, 0, 1)
+shader_parameter/outline_width = 1.645
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tj0my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_olsmu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="weapon" type="Node2D"]
+script = ExtResource("1_wruhp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_0rcor")
+scale = Vector2(0.145, 0.145)
+sprite_frames = SubResource("SpriteFrames_tj0my")
+
+[node name="shoot_pos" type="Marker2D" parent="."]
+position = Vector2(0, -20)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

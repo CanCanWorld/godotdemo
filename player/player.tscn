@@ -1,7 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpbe08quey0ls"]
+[gd_scene load_steps=13 format=3 uid="uid://bpbe08quey0ls"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_att55"]
 [ext_resource type="Texture2D" uid="uid://baxpe121knk6n" path="res://player/assets/player1/creature-sheet.png" id="2_6jgfl"]
+[ext_resource type="Shader" path="res://player/player_outline.gdshader" id="2_hfqsa"]
+[ext_resource type="PackedScene" uid="uid://c6fxi2ta0vrqh" path="res://weapon/now_weapons.tscn" id="3_jnjjg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w41wg"]
+shader = ExtResource("2_hfqsa")
+shader_parameter/outline_color = Color(0.043, 4.324, 2.703, 1)
+shader_parameter/outline_width = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rt7jx"]
 atlas = ExtResource("2_6jgfl")
@@ -43,10 +50,17 @@ animations = [{
 radius = 11.0
 height = 34.0
 
+[sub_resource type="Environment" id="Environment_ymg07"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.65
+
 [node name="player" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_att55")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_w41wg")
 sprite_frames = SubResource("SpriteFrames_ap8lr")
 animation = &"run"
 autoplay = "run"
@@ -72,3 +86,8 @@ offset_bottom = -1.0
 scale = Vector2(0.32, 0.239999)
 value = 100.0
 show_percentage = false
+
+[node name="now_weapons" parent="." instance=ExtResource("3_jnjjg")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ymg07")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwl282gsmanet"]
+
+[ext_resource type="Script" path="res://bullet/bullet.gd" id="1_gnr8r"]
+[ext_resource type="Texture2D" uid="uid://col8k8wdq2mbk" path="res://bullet/assets/bullet1/bullet.png" id="1_xqloe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rakje"]
+radius = 13.1529
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8r3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xqloe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bullet" type="CharacterBody2D"]
+z_index = 15
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_gnr8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rakje")
+
+[node name="BulletAnim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.165, 0.165)
+sprite_frames = SubResource("SpriteFrames_c8r3s")

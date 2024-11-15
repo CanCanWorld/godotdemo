@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 4
+var speed = 8 
 var sprintTime = 0
 @onready var playerAnim = $PlayerAnim
 @onready var ball = $RigidBody2D
