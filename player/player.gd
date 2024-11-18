@@ -1,19 +1,20 @@
 extends CharacterBody2D
 
-var speed = 8 
+var speed = 2 
 var sprintTime = 0
 @onready var playerAnim = $PlayerAnim
 @onready var ball = $RigidBody2D
 @onready var sprintProgress = $SprintProgress
-var sprint_time_sum = 0.5
+var sprint_time_sum = 2.5
 var sprint_time_sleep_sum = 2
 var sprint_time_sleep = 0
 var isCanSprint = true
 var sprint_scale = 2
+var lastDir = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	choosePlayer("player1")
+	#choosePlayer("player1")
 	pass # Replace with function body.
 
 
@@ -30,16 +31,33 @@ func _process(delta: float) -> void:
 		sprintTime -= delta
 		sprintProgress.value = sprintTime * 100 / sprint_time_sum
 		print("冲刺中", sprintTime)
+		if vector.x > 0:
+			playerAnim.animation = "run_right"
+		elif vector.x < 0:
+			playerAnim.animation = "run_left"
+		elif vector.x == 0:
+			if vector.y > 0:
+				playerAnim.animation = "run"
+			elif vector.y < 0:
+				playerAnim.animation = "run_back"
 		position += vector * speed * sprint_scale
-		playerAnim.speed_scale = sprint_scale
 		if sprintTime < 0:
 			sprint_time_sleep = sprint_time_sleep_sum
-	else :
+	elif vector.x != 0||vector.y != 0:
 		#行走
-		print("行走")
+		lastDir = vector
+		print("行走", vector)
 		playerAnim.speed_scale = 1
+		if vector.x > 0:
+			playerAnim.animation = "walk_right"
+		elif vector.x < 0:
+			playerAnim.animation = "walk_left"
+		elif vector.x == 0:
+			if vector.y > 0:
+				playerAnim.animation = "walk"
+			elif vector.y < 0:
+				playerAnim.animation = "walk_back"
 		position += vector * speed
-		playerAnim.play()
 	if sprint_time_sleep > 0:
 		#等待冲刺冷却
 		sprint_time_sleep -= delta
@@ -47,13 +65,22 @@ func _process(delta: float) -> void:
 		sprintProgress.value = 100 - sprint_time_sleep / sprint_time_sleep_sum * 100
 		if sprint_time_sleep <= 0:
 			isCanSprint = true
-	if vector.x != 0||vector.y != 0:
-		#朝向
-		playerAnim.flip_h = vector.x < 0
-	else :
+	if vector.x == 0&&vector.y == 0:
 		#停下
-		print("停下")
-		playerAnim.stop()
+		print("停下", lastDir)
+		if lastDir.x > 0:
+			print("idle_right")
+			playerAnim.animation = "idle_right"
+		elif lastDir.x < 0:
+			print("idle_left")
+			playerAnim.animation = "idle_left"
+		elif lastDir.x == 0:
+			if lastDir.y > 0:
+				print("idle")
+				playerAnim.animation = "idle"
+			elif lastDir.y < 0:
+				print("idle_back")
+				playerAnim.animation = "idle_back"
 	move_and_slide()
 	pass
 	

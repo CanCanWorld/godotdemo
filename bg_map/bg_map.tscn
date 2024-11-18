@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ryhjynxxktgh"]
+[gd_scene load_steps=7 format=3 uid="uid://ryhjynxxktgh"]
 
 [ext_resource type="Script" path="res://bg_map/bg_map.gd" id="1_b6kxd"]
 [ext_resource type="Texture2D" uid="uid://b2l86c7uh27xn" path="res://res/bg.png" id="2_omurl"]
 [ext_resource type="PackedScene" uid="uid://bpbe08quey0ls" path="res://player/player.tscn" id="3_8yfc5"]
-[ext_resource type="Texture2D" uid="uid://41mhgcns783" path="res://nun_walk.png" id="5_ia445"]
+[ext_resource type="PackedScene" uid="uid://dvq8dv48gmdjw" path="res://enemy/enemy.tscn" id="4_215re"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7k8jc"]
 texture = ExtResource("2_omurl")
@@ -42,73 +42,6 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_7k8jc")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2s3c"]
-size = Vector2(38, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0hw0t"]
-atlas = ExtResource("5_ia445")
-region = Rect2(0, 0, 80, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_apet7"]
-atlas = ExtResource("5_ia445")
-region = Rect2(80, 0, 80, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0w5v6"]
-atlas = ExtResource("5_ia445")
-region = Rect2(160, 0, 80, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvq7e"]
-atlas = ExtResource("5_ia445")
-region = Rect2(240, 0, 80, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nym45"]
-atlas = ExtResource("5_ia445")
-region = Rect2(0, 100, 80, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_53and"]
-atlas = ExtResource("5_ia445")
-region = Rect2(80, 100, 80, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mlkq5"]
-atlas = ExtResource("5_ia445")
-region = Rect2(160, 100, 80, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cv13"]
-atlas = ExtResource("5_ia445")
-region = Rect2(240, 100, 80, 100)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rfnom"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0hw0t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_apet7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0w5v6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fvq7e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nym45")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_53and")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mlkq5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5cv13")
-}],
-"loop": true,
-"name": &"default",
-"speed": 45.0
-}]
-
 [node name="bgMap" type="Node2D"]
 script = ExtResource("1_b6kxd")
 
@@ -126,58 +59,5 @@ layer_2/tile_data = PackedInt32Array(-786447, 131072, 1, -720911, 131072, 1, -65
 [node name="player" parent="." instance=ExtResource("3_8yfc5")]
 position = Vector2(1154, 242)
 
-[node name="enemy" type="RigidBody2D" parent="." groups=["enemy"]]
-position = Vector2(1285, 218)
-collision_layer = 8
-collision_mask = 15
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
-position = Vector2(5, 1)
-shape = SubResource("RectangleShape2D_f2s3c")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy"]
-sprite_frames = SubResource("SpriteFrames_rfnom")
-autoplay = "default"
-
-[node name="enemy2" type="RigidBody2D" parent="." groups=["enemy"]]
-position = Vector2(1285, 218)
-collision_layer = 8
-collision_mask = 15
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2"]
-position = Vector2(5, 1)
-shape = SubResource("RectangleShape2D_f2s3c")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy2"]
-sprite_frames = SubResource("SpriteFrames_rfnom")
-autoplay = "default"
-
-[node name="enemy3" type="RigidBody2D" parent="." groups=["enemy"]]
-position = Vector2(1285, 218)
-collision_layer = 8
-collision_mask = 15
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy3"]
-position = Vector2(5, 1)
-shape = SubResource("RectangleShape2D_f2s3c")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy3"]
-sprite_frames = SubResource("SpriteFrames_rfnom")
-autoplay = "default"
-
-[node name="enemy4" type="RigidBody2D" parent="." groups=["enemy"]]
-position = Vector2(1285, 218)
-collision_layer = 8
-collision_mask = 15
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy4"]
-position = Vector2(5, 1)
-shape = SubResource("RectangleShape2D_f2s3c")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy4"]
-sprite_frames = SubResource("SpriteFrames_rfnom")
-autoplay = "default"
+[node name="enemy" parent="." instance=ExtResource("4_215re")]
+position = Vector2(999, 255)

@@ -5,3 +5,6 @@ res://player/player.tscn
 res://weapon/weapon.tscn
 res://weapon/now_weapons.tscn
 res://bullet/bullet.tscn
+res://enemy/enemy.tscn
+res://enemy/enemy_outline.gdshader
+res://weapon/now_weapons.gd

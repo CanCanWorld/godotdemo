@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baxpe121knk6n"
-path="res://.godot/imported/creature-sheet.png-9de6e6c83c37f132f478d1b72f43e3d7.ctex"
+uid="uid://dkfhkxronqiua"
+path="res://.godot/imported/64X128_Walking_Free.png-7af31bea12493f3034606197e4629170.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/player1/creature-sheet.png"
-dest_files=["res://.godot/imported/creature-sheet.png-9de6e6c83c37f132f478d1b72f43e3d7.ctex"]
+source_file="res://player/assets/player1/64X128_Walking_Free.png"
+dest_files=["res://.godot/imported/64X128_Walking_Free.png-7af31bea12493f3034606197e4629170.ctex"]
 
 [params]
 
