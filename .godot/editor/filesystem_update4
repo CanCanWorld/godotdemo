@@ -1,12 +1,7 @@
-res://weapon/weapon.tscn
-res://weapon/weapon_ouutlin.gdshader
 res://bg_map/bg_map.tscn
-res://player/player.tscn
-res://weapon/now_weapons.tscn
-res://weapon/weapon_outline.gdshader
 res://player/player_outline.gdshader
-res://player/player.gd
+res://weapon/weapon_outline.gdshader
+res://player/player.tscn
+res://weapon/weapon.tscn
+res://weapon/now_weapons.tscn
 res://bullet/bullet.tscn
-res://weapon/weapon.gd
-res://bullet/bullet.gd
-res://bullet/bullet_test.gd

@@ -28,6 +28,11 @@ window/canvas_textures/default_texture_filter=1
 
 project/assembly_name="godotdemo"
 
+[global_group]
+
+enemy=""
+player=""
+
 [input]
 
 "上"={
