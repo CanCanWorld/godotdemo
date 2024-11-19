@@ -1,10 +1,12 @@
 res://bg_map/bg_map.tscn
 res://player/player_outline.gdshader
 res://weapon/weapon_outline.gdshader
+res://enemy/enemy_outline.gdshader
 res://player/player.tscn
 res://weapon/weapon.tscn
 res://weapon/now_weapons.tscn
 res://bullet/bullet.tscn
 res://enemy/enemy.tscn
-res://enemy/enemy_outline.gdshader
-res://weapon/now_weapons.gd
+res://enemy/now_enemies.tscn
+res://enemy/now_enemies.gd
+res://player/player.gd

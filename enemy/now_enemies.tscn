@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt6f4nmxihdn3"]
+
+[ext_resource type="Script" path="res://enemy/now_enemies.gd" id="1_0sxov"]
+[ext_resource type="PackedScene" uid="uid://dvq8dv48gmdjw" path="res://enemy/enemy.tscn" id="1_s283v"]
+
+[node name="now_enemies" type="Node2D"]
+script = ExtResource("1_0sxov")
+
+[node name="enemy" parent="." instance=ExtResource("1_s283v")]
+position = Vector2(36, 16)
+
+[node name="enemy2" parent="." instance=ExtResource("1_s283v")]
+position = Vector2(570, 323)
+
+[node name="enemy3" parent="." instance=ExtResource("1_s283v")]
+position = Vector2(557, 48)
+
+[node name="enemy4" parent="." instance=ExtResource("1_s283v")]
+position = Vector2(109, 231)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

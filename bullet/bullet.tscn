@@ -1,31 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwl282gsmanet"]
+[gd_scene load_steps=6 format=3 uid="uid://bwl282gsmanet"]
 
 [ext_resource type="Script" path="res://bullet/bullet.gd" id="1_gnr8r"]
-[ext_resource type="Texture2D" uid="uid://col8k8wdq2mbk" path="res://bullet/assets/bullet1/bullet.png" id="1_xqloe"]
+[ext_resource type="Texture2D" uid="uid://dqm00xfn0l68u" path="res://res/bullet.png" id="2_lhsli"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rakje"]
-radius = 13.1529
+radius = 6.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8r3s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xqloe")
+"texture": ExtResource("2_lhsli")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucnp4"]
+radius = 30.9098
+
 [node name="bullet" type="CharacterBody2D"]
 z_index = 15
 collision_layer = 4
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_gnr8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rakje")
 
 [node name="BulletAnim" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.165, 0.165)
+modulate = Color(0.366975, 0.2655, 0.45, 1)
+scale = Vector2(0.196791, 0.196791)
 sprite_frames = SubResource("SpriteFrames_c8r3s")
+
+[node name="Area2D" type="Area2D" parent="BulletAnim"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletAnim/Area2D"]
+shape = SubResource("CircleShape2D_ucnp4")
+
+[connection signal="body_shape_entered" from="BulletAnim/Area2D" to="." method="_on_area_2d_body_shape_entered"]

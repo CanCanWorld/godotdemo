@@ -10,7 +10,7 @@ var hurt = 5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var randi = randi_range(1,6)
-	choosePlayer('bullet' + String.num(randi))
+	#choosePlayer('bullet' + String.num(randi))
 	pass # Replace with function body.
 
 
@@ -34,3 +34,14 @@ func choosePlayer(name: String):
 	sprite_frames_custom.add_frame("default", frame)
 	bullet_anim.sprite_frames = sprite_frames_custom
 	pass
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body is TileMap:
+		var coords = body.get_coords_for_body_rid(body_rid)
+		var tile_data : TileData = body.get_cell_tile_data(2, coords)
+		var isWall : bool = tile_data.get_custom_data("isWall")
+		print('isWall', isWall)
+		if isWall:
+			queue_free()
+	pass # Replace with function body.
