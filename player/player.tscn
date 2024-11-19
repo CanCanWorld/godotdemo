@@ -827,7 +827,6 @@ position = Vector2(1, -5)
 shape = SubResource("CapsuleShape2D_kckde")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

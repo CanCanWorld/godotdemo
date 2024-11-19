@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var tileMap = $TileMap
+@onready var tileMap: TileMap = $TileMap
 
 func _ready() -> void:
 	random_tile()

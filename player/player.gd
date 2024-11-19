@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 	elif vector.x != 0||vector.y != 0:
 		#行走
 		lastDir = vector
-		print("行走", vector)
+		print("行走", position)
 		playerAnim.speed_scale = 1
 		if vector.x > 0:
 			playerAnim.animation = "walk_right"

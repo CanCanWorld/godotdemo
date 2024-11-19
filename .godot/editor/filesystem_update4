@@ -10,3 +10,5 @@ res://enemy/enemy.tscn
 res://enemy/now_enemies.tscn
 res://enemy/now_enemies.gd
 res://player/player.gd
+res://enemy/enemy.gd
+res://bg_map/bg_map.gd
