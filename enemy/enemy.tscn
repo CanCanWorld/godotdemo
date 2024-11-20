@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3o0la"]
 shader = ExtResource("1_nvk8d")
-shader_parameter/outline_color = Color(4.57, 0, 0, 1)
+shader_parameter/outline_color = Color(0.0647024, 0.207842, 0.301104, 1)
 shader_parameter/outline_width = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjrec"]
@@ -176,3 +176,11 @@ frame_progress = 0.0866886
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_310cj")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -37.0
+offset_top = 16.0
+offset_right = 37.0
+offset_bottom = 31.0
+value = 26.34
+show_percentage = false

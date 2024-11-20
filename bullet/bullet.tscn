@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqm00xfn0l68u" path="res://res/bullet.png" id="2_lhsli"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rakje"]
-radius = 6.0
+radius = 15.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8r3s"]
 animations = [{
@@ -23,20 +23,20 @@ radius = 30.9098
 [node name="bullet" type="CharacterBody2D"]
 z_index = 15
 collision_layer = 4
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_gnr8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rakje")
 
 [node name="BulletAnim" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.366975, 0.2655, 0.45, 1)
-scale = Vector2(0.196791, 0.196791)
+modulate = Color(0.54, 3.784, 2.703, 1)
+scale = Vector2(0.476793, 0.476793)
 sprite_frames = SubResource("SpriteFrames_c8r3s")
 
 [node name="Area2D" type="Area2D" parent="BulletAnim"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletAnim/Area2D"]
 shape = SubResource("CircleShape2D_ucnp4")

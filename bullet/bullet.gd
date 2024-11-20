@@ -44,4 +44,11 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 		print('isWall', isWall)
 		if isWall:
 			queue_free()
+	if body.is_in_group("enemy"):
+		queue_free()
+		var enemy = body as Enemy
+		enemy.global_position -= (global_position - enemy.global_position).normalized() * hurt*3
+		enemy.hp -= hurt
+		if enemy.hp <= 0:
+			body.queue_free()
 	pass # Replace with function body.

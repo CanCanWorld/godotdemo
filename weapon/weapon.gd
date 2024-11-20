@@ -6,7 +6,7 @@ extends Node2D
 @onready var bullet = preload("res://bullet/bullet.tscn")
 
 var shoot_time = 1
-var bullet_speed = 400
+var bullet_speed = 900
 var bullet_hurt = 10
 var attack_enemise: Array[Node2D] = []
 

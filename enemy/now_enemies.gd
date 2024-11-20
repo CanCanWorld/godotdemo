@@ -20,7 +20,5 @@ func _on_timer_timeout() -> void:
 	var local_position = tileMap.map_to_local(tileMap.get_used_cells(0)[num])
 	var enemyTemp: Enemy = enemy.instantiate()
 	enemyTemp.position = local_position * tileMap.scale - position
-	var c = randi_range(111111, 999999)
 	add_child(enemyTemp)
-	print(tag + "position", local_position)
 	pass # Replace with function body.
