@@ -18,6 +18,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if attack_enemise.size() != 0:
+		sort_enemise()
 		var attack_enemy = attack_enemise[0]
 		look_at(attack_enemy.global_position)
 	else :
@@ -26,13 +27,13 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print('enemy', "_on_timer_timeout")
 	if attack_enemise.size() != 0:
 		var now_bullet : Bullet = bullet.instantiate()
 		now_bullet.speed = bullet_speed
 		now_bullet.hurt = bullet_hurt
 		now_bullet.position = shoot_pos.global_position
 		now_bullet.dir = (attack_enemise[0].global_position - now_bullet.position).normalized()
+		now_bullet.rotation = (attack_enemise[0].global_position - now_bullet.position).angle()
 		get_tree().root.add_child(now_bullet)
 	pass # Replace with function body.
 
@@ -47,3 +48,11 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("enemy") && attack_enemise.has(body):
 		attack_enemise.remove_at(attack_enemise.find(body))
 	pass # Replace with function body.
+
+func sort_enemise(): 
+	if attack_enemise.size() == 0:
+		return
+	attack_enemise.sort_custom(
+		func (a: Node2D, b: Node2D):
+			return a.global_position.distance_to(global_position) < b.global_position.distance_to(global_position)
+	)

@@ -21,4 +21,5 @@ func _on_timer_timeout() -> void:
 	var enemyTemp: Enemy = enemy.instantiate()
 	enemyTemp.position = local_position * tileMap.scale - position
 	add_child(enemyTemp)
+	print("敌人数量", get_child_count())
 	pass # Replace with function body.

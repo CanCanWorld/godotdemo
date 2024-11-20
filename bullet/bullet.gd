@@ -41,14 +41,10 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 		var coords = body.get_coords_for_body_rid(body_rid)
 		var tile_data : TileData = body.get_cell_tile_data(2, coords)
 		var isWall : bool = tile_data.get_custom_data("isWall")
-		print('isWall', isWall)
 		if isWall:
 			queue_free()
 	if body.is_in_group("enemy"):
-		queue_free()
+		#queue_free()
 		var enemy = body as Enemy
-		enemy.global_position -= (global_position - enemy.global_position).normalized() * hurt*3
-		enemy.hp -= hurt
-		if enemy.hp <= 0:
-			body.queue_free()
+		enemy.induce_hp(hurt, global_position)
 	pass # Replace with function body.

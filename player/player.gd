@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 4 
+var speed = 8 
 var sprintTime = 0
 @onready var playerAnim = $PlayerAnim
 @onready var ball = $RigidBody2D
@@ -30,7 +30,6 @@ func _process(delta: float) -> void:
 		isCanSprint = false
 		sprintTime -= delta
 		sprintProgress.value = sprintTime * 100 / sprint_time_sum
-		print("冲刺中", sprintTime)
 		if vector.x > 0:
 			playerAnim.animation = "run_right"
 		elif vector.x < 0:
@@ -46,7 +45,6 @@ func _process(delta: float) -> void:
 	elif vector.x != 0||vector.y != 0:
 		#行走
 		lastDir = vector
-		print("行走", position)
 		playerAnim.speed_scale = 1
 		if vector.x > 0:
 			playerAnim.animation = "walk_right"
@@ -61,25 +59,19 @@ func _process(delta: float) -> void:
 	if sprint_time_sleep > 0:
 		#等待冲刺冷却
 		sprint_time_sleep -= delta
-		print("冲刺冷却中", sprint_time_sleep)
 		sprintProgress.value = 100 - sprint_time_sleep / sprint_time_sleep_sum * 100
 		if sprint_time_sleep <= 0:
 			isCanSprint = true
 	if vector.x == 0&&vector.y == 0:
 		#停下
-		print("停下", lastDir)
 		if lastDir.x > 0:
-			print("idle_right")
 			playerAnim.animation = "idle_right"
 		elif lastDir.x < 0:
-			print("idle_left")
 			playerAnim.animation = "idle_left"
 		elif lastDir.x == 0:
 			if lastDir.y > 0:
-				print("idle")
 				playerAnim.animation = "idle"
 			elif lastDir.y < 0:
-				print("idle_back")
 				playerAnim.animation = "idle_back"
 	move_and_slide()
 	pass

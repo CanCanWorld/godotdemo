@@ -1,15 +1,11 @@
-extends Node2D
+extends Node
 
-var radiu = 100
+@onready var anim_tscn = preload("res://animations/animations.tscn")
+@onready var anim: Animations
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var weapons_count = get_child_count()
-	#计算弧度
-	var unit_angle = 2 * PI / weapons_count
-	for i in weapons_count:
-		var child :Node2D = get_child(i)
-		child.position = Vector2(radiu, 0).rotated(unit_angle * i)
+	anim = anim_tscn.instantiate()
 	pass # Replace with function body.
 
 

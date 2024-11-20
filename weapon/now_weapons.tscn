@@ -17,3 +17,15 @@ script = ExtResource("1_5kh86")
 [node name="weapon5" parent="." instance=ExtResource("2_xdvvr")]
 
 [node name="weapon6" parent="." instance=ExtResource("2_xdvvr")]
+
+[node name="weapon7" parent="." instance=ExtResource("2_xdvvr")]
+
+[node name="weapon8" parent="." instance=ExtResource("2_xdvvr")]
+
+[node name="weapon9" parent="." instance=ExtResource("2_xdvvr")]
+
+[node name="weapon10" parent="." instance=ExtResource("2_xdvvr")]
+
+[node name="weapon11" parent="." instance=ExtResource("2_xdvvr")]
+
+[node name="weapon12" parent="." instance=ExtResource("2_xdvvr")]

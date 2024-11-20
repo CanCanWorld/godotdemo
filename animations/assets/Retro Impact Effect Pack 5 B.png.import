@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c20e3dtoqcvyp"
-path="res://.godot/imported/bullet.png-01b0e9101e4c27980a3ae0375105ad1c.ctex"
+uid="uid://du38h1lw0xs3"
+path="res://.godot/imported/Retro Impact Effect Pack 5 B.png-a67d9160c38329044405df8a50e21cc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bullet/assets/bullet3/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-01b0e9101e4c27980a3ae0375105ad1c.ctex"]
+source_file="res://animations/assets/Retro Impact Effect Pack 5 B.png"
+dest_files=["res://.godot/imported/Retro Impact Effect Pack 5 B.png-a67d9160c38329044405df8a50e21cc1.ctex"]
 
 [params]
 
