@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://byc5xwxxu5ars"]
+
+[ext_resource type="Script" path="res://scene/update/scene_update.gd" id="1_eyr3u"]
+
+[node name="scene_update" type="CanvasLayer" groups=["update"]]
+process_mode = 2
+script = ExtResource("1_eyr3u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0, 0, 0, 0.227451)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.403922)
+
+[node name="Button1" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "选择"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.403922)
+
+[node name="Button2" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "选择"
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.403922)
+
+[node name="Button3" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "选择"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer3/Button3" to="." method="_on_button_3_pressed"]

@@ -1,9 +1,13 @@
-res://player/player.tscn
+res://ui/game_ui.tscn
+res://drop_item/drop_item_outline.gdshader
+res://enemy/enemy_outline.gdshader
 res://player/player_outline.gdshader
 res://weapon/weapon_outline.gdshader
-res://enemy/enemy_outline.gdshader
+res://ui/game_ui.gd
 res://player/player.gd
+res://GameMain.gd
 res://bg_map/bg_map.tscn
+res://player/player.tscn
 res://weapon/weapon.tscn
 res://weapon/now_weapons.tscn
 res://bullet/bullet.tscn
@@ -12,6 +16,7 @@ res://enemy/now_enemies.tscn
 res://hurt/hurt.tscn
 res://animations/animations.tscn
 res://drop_item/drop_item.tscn
-res://drop_item/drop_item_outline.gdshader
-res://hurt/hurt.gd
-res://ui/game_ui.tscn
+res://enemy/enemy.gd
+res://bullet/bullet.gd
+res://scene/update/scene_update.tscn
+res://scene/update/scene_update.gd

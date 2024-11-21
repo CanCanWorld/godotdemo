@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 var speed = 8 
 var sprintTime = 0
 @onready var playerAnim = $PlayerAnim
@@ -11,6 +13,11 @@ var sprint_time_sleep = 0
 var isCanSprint = true
 var sprint_scale = 2
 var lastDir = Vector2.ZERO
+var max_hp = 100
+var hp = max_hp
+var max_exp = 10
+var exp = 0
+var level = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -108,5 +115,18 @@ func _on_stop_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("drop_item"):
 		var drop_item = body as DropItem
 		drop_item.isMoving = false
+		#获取经验
+		get_exp()
 		drop_item.queue_free()
 	pass # Replace with function body.
+
+func get_exp():
+	exp += 1
+	if exp >= max_exp:
+		#升级
+		exp = 0
+		level += 1
+		max_exp = level * 10
+		get_tree().paused = true
+		var update = get_tree().get_first_node_in_group("update")
+		update.show()

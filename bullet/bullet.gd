@@ -26,7 +26,7 @@ func choosePlayer(name: String):
 	bullet_anim.sprite_frames.clear_all()
 	var sprite_frames_custom = SpriteFrames.new()
 	sprite_frames_custom.add_animation("default")
-	sprite_frames_custom.set_animation_loop("default", true	)
+	sprite_frames_custom.set_animation_loop("default", true)
 	var texture_size = Vector2(183, 183)
 	var full_texture = load("res://bullet/assets/" + name + "/bullet.png")
 	var frame = AtlasTexture.new()
@@ -46,5 +46,5 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 	if body.is_in_group("enemy"):
 		queue_free()
 		var enemy = body as Enemy
-		enemy.induce_hp(hurt, global_position)
+		enemy.hurted(hurt, global_position)
 	pass # Replace with function body.

@@ -17,39 +17,3 @@ script = ExtResource("1_5kh86")
 [node name="weapon5" parent="." instance=ExtResource("2_xdvvr")]
 
 [node name="weapon6" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon7" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon8" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon9" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon10" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon11" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon12" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon13" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon14" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon15" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon16" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon17" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon18" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon19" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon20" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon21" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon22" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon23" parent="." instance=ExtResource("2_xdvvr")]
-
-[node name="weapon24" parent="." instance=ExtResource("2_xdvvr")]

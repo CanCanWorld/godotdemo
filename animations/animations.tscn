@@ -149,5 +149,7 @@ script = ExtResource("1_ehldu")
 scale = Vector2(0.399999, 0.399999)
 sprite_frames = SubResource("SpriteFrames_kolue")
 animation = &"enemy_dead"
+frame = 8
+frame_progress = 1.0
 
 [connection signal="animation_finished" from="all_animations" to="." method="_on_all_animations_animation_finished"]

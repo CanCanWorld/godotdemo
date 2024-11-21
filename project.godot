@@ -38,6 +38,7 @@ enemy=""
 player=""
 map=""
 drop_item=""
+update=""
 
 [input]
 

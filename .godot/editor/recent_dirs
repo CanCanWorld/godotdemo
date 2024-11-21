@@ -1,12 +1,13 @@
+res://scene/update
+res://animations/assets
+res://enemy/assets/enemy1
 res://ui
 res://drop_item/assets
 res://drop_item
-res://animations/assets
 res://
 res://animations
 res://hurt
 res://enemy
-res://enemy/assets/enemy1
 res://player/assets/player1
 res://bullet
 res://weapon
