@@ -95,3 +95,18 @@ func choosePlayer(name: String):
 			sprite_frames_custom.add_frame("run", frame)
 	playerAnim.sprite_frames = sprite_frames_custom
 	pass
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("drop_item"):
+		var drop_item = body as DropItem
+		drop_item.isMoving = true
+	pass # Replace with function body.
+
+
+func _on_stop_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("drop_item"):
+		var drop_item = body as DropItem
+		drop_item.isMoving = false
+		drop_item.queue_free()
+	pass # Replace with function body.

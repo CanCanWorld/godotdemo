@@ -36,7 +36,7 @@ func induce_hp(hurt: int, position: Vector2) -> void:
 		"box": self,
 		"ani_name": "enemy_hurt",
 		"position": Vector2.ONE,
-		"scale": Vector2(3, 3)
+		"scale": Vector2(5, 5)
 	})
 	global_position -= (position - global_position).normalized() * hurt * 3
 	if hp <= 0: 
@@ -44,6 +44,12 @@ func induce_hp(hurt: int, position: Vector2) -> void:
 			"box": get_tree().root,
 			"ani_name": "enemy_dead",
 			"position": global_position,
-			"scale": Vector2(20, 20)
+			"scale": Vector2(10, 10)
+		})
+		GameMain.drop_item.create_drop_item({
+			"box": get_tree().root,
+			"ani_name": "exp",
+			"position": global_position,
+			"scale": Vector2(3, 3)
 		})
 		queue_free()

@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://6h8g83tjckdy"]
+
+[ext_resource type="Script" path="res://drop_item/drop_item.gd" id="1_4dkv8"]
+[ext_resource type="Texture2D" uid="uid://xgty68qtnm3r" path="res://drop_item/assets/spr_coin_azu.png" id="1_8pur4"]
+[ext_resource type="Shader" path="res://drop_item/drop_item_outline.gdshader" id="2_8eytr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_utxv4"]
+shader = ExtResource("2_8eytr")
+shader_parameter/outline_color = Color(0.595, 0.182, 10.27, 1)
+shader_parameter/outline_width = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n1bo"]
+atlas = ExtResource("1_8pur4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0g2f"]
+atlas = ExtResource("1_8pur4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5455"]
+atlas = ExtResource("1_8pur4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwaak"]
+atlas = ExtResource("1_8pur4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6ce6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n1bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0g2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5455")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwaak")
+}],
+"loop": true,
+"name": &"exp",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qot2"]
+radius = 5.0
+height = 16.0
+
+[node name="drop_item" type="CharacterBody2D" groups=["drop_item"]]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_4dkv8")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_utxv4")
+sprite_frames = SubResource("SpriteFrames_h6ce6")
+animation = &"exp"
+autoplay = "exp"
+frame = 1
+frame_progress = 0.18574
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_2qot2")

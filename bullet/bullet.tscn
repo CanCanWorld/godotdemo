@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwl282gsmanet"]
+[gd_scene load_steps=8 format=3 uid="uid://bwl282gsmanet"]
 
 [ext_resource type="Script" path="res://bullet/bullet.gd" id="1_gnr8r"]
 [ext_resource type="Texture2D" uid="uid://b2k731iw3pylq" path="res://bullet/assets/bullet1/bullet0.png" id="2_bp2a0"]
+[ext_resource type="Shader" path="res://bullet/bullet_outline.gdshader" id="2_c1uy5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rakje"]
 radius = 15.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0fg7"]
+shader = ExtResource("2_c1uy5")
+shader_parameter/outline_color = Color(6.486, 0.08, 3.784, 1)
+shader_parameter/outline_width = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8r3s"]
 animations = [{
@@ -30,7 +36,7 @@ script = ExtResource("1_gnr8r")
 shape = SubResource("CircleShape2D_rakje")
 
 [node name="BulletAnim" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.768627, 0.266667, 0.92549, 1)
+material = SubResource("ShaderMaterial_d0fg7")
 position = Vector2(-15, 9.53674e-07)
 rotation = 1.5708
 scale = Vector2(1.94192, 1.94192)

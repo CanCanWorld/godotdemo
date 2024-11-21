@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyvcoldpbpy5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncfkt"]
+bg_color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nriss"]
+bg_color = Color(1, 0.340975, 0.296558, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuj6t"]
+bg_color = Color(0, 0.723932, 0.246459, 1)
+
+[node name="game_ui" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 1.0
+offset_top = 22.0
+offset_right = 553.0
+offset_bottom = 193.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "HP: "
+horizontal_alignment = 2
+
+[node name="hp_progress" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_ncfkt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nriss")
+value = 50.0
+show_percentage = false
+
+[node name="hp_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/hp_progress"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -21.0
+offset_right = 48.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "50/100"
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer/hp_progress"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "EXP: "
+horizontal_alignment = 2
+
+[node name="exp_progress" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_ncfkt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nuj6t")
+value = 50.0
+show_percentage = false
+
+[node name="exp_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/exp_progress"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -106.18
+offset_top = -21.0
+offset_right = -9.17999
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "LV.1"
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/exp_progress"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

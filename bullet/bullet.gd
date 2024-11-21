@@ -44,7 +44,7 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 		if isWall:
 			queue_free()
 	if body.is_in_group("enemy"):
-		#queue_free()
+		queue_free()
 		var enemy = body as Enemy
 		enemy.induce_hp(hurt, global_position)
 	pass # Replace with function body.

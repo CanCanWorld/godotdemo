@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://bpbe08quey0ls"]
+[gd_scene load_steps=117 format=3 uid="uid://bpbe08quey0ls"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_att55"]
 [ext_resource type="Shader" path="res://player/player_outline.gdshader" id="2_hfqsa"]
@@ -6,6 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://cyhofexlgfsek" path="res://player/assets/player1/64X128_Idle_Free.png" id="3_wxfs2"]
 [ext_resource type="Texture2D" uid="uid://bjjsv0iisb7h8" path="res://player/assets/player1/64X128_Runing_Free.png" id="4_oka2i"]
 [ext_resource type="Texture2D" uid="uid://dkfhkxronqiua" path="res://player/assets/player1/64X128_Walking_Free.png" id="5_xo87u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kckde"]
+radius = 13.0
+height = 84.0
+
+[sub_resource type="Environment" id="Environment_ymg07"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.6
+glow_hdr_scale = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3enjc"]
+radius = 200.062
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lv1b8"]
+radius = 29.7321
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w41wg"]
 shader = ExtResource("2_hfqsa")
@@ -803,24 +819,10 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kckde"]
-radius = 13.0
-height = 84.0
-
-[sub_resource type="Environment" id="Environment_ymg07"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 0.65
-
 [node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 50
 collision_mask = 3
 script = ExtResource("1_att55")
-
-[node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_w41wg")
-sprite_frames = SubResource("SpriteFrames_ap8lr")
-animation = &"idle"
-autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -5)
@@ -842,7 +844,31 @@ scale = Vector2(0.32, 0.239999)
 value = 100.0
 show_percentage = false
 
-[node name="now_weapons" parent="." instance=ExtResource("3_jnjjg")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ymg07")
+
+[node name="now_weapons" parent="." instance=ExtResource("3_jnjjg")]
+
+[node name="collect_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CharacterBody2D" type="CollisionShape2D" parent="collect_area"]
+modulate = Color(0.1158, 0.036, 0.72, 1)
+shape = SubResource("CircleShape2D_3enjc")
+
+[node name="stop_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stop_area"]
+shape = SubResource("CircleShape2D_lv1b8")
+
+[node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_w41wg")
+sprite_frames = SubResource("SpriteFrames_ap8lr")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="collect_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="stop_area" to="." method="_on_stop_area_body_entered"]
