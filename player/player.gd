@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-var speed = 8 
+var speed = 4 
 var sprintTime = 0
 @onready var playerAnim = $PlayerAnim
 @onready var ball = $RigidBody2D
@@ -18,6 +18,8 @@ var hp = max_hp
 var max_exp = 10
 var exp = 0
 var level = 1
+var recovery = 0
+var attack = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

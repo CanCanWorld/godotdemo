@@ -7,16 +7,20 @@ extends Node2D
 
 var shoot_time = 1
 var bullet_speed = 900
-var bullet_hurt = 10
+var bullet_hurt_base = 10
+var bullet_hurt = bullet_hurt_base
 var attack_enemise: Array[Node2D] = []
+var player : Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	bullet_hurt = bullet_hurt_base + player.attack
 	if attack_enemise.size() != 0:
 		sort_enemise()
 		var attack_enemy = attack_enemise[0]

@@ -20,6 +20,4 @@ func _process(delta: float) -> void:
 	exp_progress.max_value = player.max_exp
 	exp_label.text = "LV." + str(player.level)
 	exp_progress.value = player.exp
-	
-	
 	pass

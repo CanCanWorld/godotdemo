@@ -1,5 +1,8 @@
-ColorRect
+Label
 MarginContainer
+Timer
+Node2D
+ColorRect
 HBoxContainer
 Button
 VBoxContainer
@@ -8,7 +11,4 @@ Area2D
 AnimationPlayer
 CollisionShape2D
 AnimatedSprite2D
-Timer
-Label
 ProgressBar
-CharacterBody2D
