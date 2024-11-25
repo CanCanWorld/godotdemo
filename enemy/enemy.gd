@@ -11,7 +11,7 @@ class_name Enemy
 var dir = Vector2.ONE
 var speed = 100
 var player : Player = null
-var max_hp = 20
+var max_hp = 100
 var hurt = 4
 var hp = max_hp
 var isDead = false

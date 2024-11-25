@@ -15,7 +15,7 @@ var sprint_scale = 2
 var lastDir = Vector2.ZERO
 var max_hp = 100
 var hp = max_hp
-var max_exp = 10
+var max_exp = 2
 var exp = 0
 var level = 1
 var recovery = 0
@@ -128,7 +128,7 @@ func get_exp():
 		#升级
 		exp = 0
 		level += 1
-		max_exp = level * 10
+		max_exp = level * 2
 		get_tree().paused = true
 		var update = get_tree().get_first_node_in_group("update")
 		update.show()

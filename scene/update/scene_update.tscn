@@ -212,5 +212,5 @@ text = "选择"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer/ColorRect/button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer2/ColorRect/button2" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer3/ColorRect/button3" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer2/ColorRect/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/MarginContainer3/ColorRect/button3" to="." method="_on_button_3_pressed"]

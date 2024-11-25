@@ -16,10 +16,11 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	if get_tree().get_node_count_in_group("enemy") == 100:
+		return
 	var num = randi_range(0, len(tileMap.get_used_cells(0)) - 1)
 	var local_position = tileMap.map_to_local(tileMap.get_used_cells(0)[num])
 	var enemyTemp: Enemy = enemy.instantiate()
 	enemyTemp.position = local_position * tileMap.scale - position
 	add_child(enemyTemp)
-	print("敌人数量", get_child_count())
 	pass # Replace with function body.
