@@ -1,3 +1,8 @@
+res://ui/end
+res://ui/start
+res://skill/chop
+res://skill/rotateBall/assets
+res://skill/rotateBall
 res://skill/hpRecovery
 res://scene/update
 res://animations/assets
@@ -11,7 +16,5 @@ res://hurt
 res://enemy
 res://player/assets/player1
 res://bullet
-res://weapon
-res://weapon/assets/weapon1
 res://player
 res://bg_map

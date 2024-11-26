@@ -7,19 +7,21 @@ var sprintTime = 0
 @onready var playerAnim = $PlayerAnim
 @onready var ball = $RigidBody2D
 @onready var sprintProgress = $SprintProgress
+@onready var recovery_tscn = preload("res://recovery/recovery.tscn")
 var sprint_time_sum = 2.5
 var sprint_time_sleep_sum = 2
 var sprint_time_sleep = 0
 var isCanSprint = true
 var sprint_scale = 2
 var lastDir = Vector2.ZERO
-var max_hp = 100
+var max_hp = 1000
 var hp = max_hp
-var max_exp = 2
+var max_exp = 10
+var base_exp = 2
 var exp = 0
 var level = 1
 var recovery = 0
-var attack = 10
+var attack = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -83,6 +85,7 @@ func _process(delta: float) -> void:
 			elif lastDir.y < 0:
 				playerAnim.animation = "idle_back"
 	move_and_slide()
+	judge_hp()
 	pass
 	
 func choosePlayer(name: String):
@@ -128,7 +131,30 @@ func get_exp():
 		#升级
 		exp = 0
 		level += 1
-		max_exp = level * 2
+		max_exp = level * base_exp
 		get_tree().paused = true
 		var update = get_tree().get_first_node_in_group("update")
 		update.show()
+
+func hp_recovery(recovery: float):
+	hp += recovery
+	if hp > max_hp:
+		hp = max_hp
+	var recovery_text_obj: RecoveryText = recovery_tscn.instantiate()
+	add_child(recovery_text_obj)
+	recovery_text_obj.set_text(str(recovery))
+	recovery_text_obj.global_position = global_position
+
+func hurt(attack : float):
+	hp -= attack
+
+func add_max_hp(value: int): 
+	max_hp += value
+	hp += value
+
+func judge_hp():
+	if hp <= 0:
+		get_tree().paused = true
+		var end : EndUi = get_tree().root.get_node("/root/bgMap/end")
+		end.is_success = false
+		end.show()

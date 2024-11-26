@@ -529,8 +529,8 @@ radius = 86.977
 bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcyjf"]
-radius = 33.0882
-height = 98.0827
+radius = 21.9098
+height = 57.3069
 
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
@@ -571,7 +571,7 @@ show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_effect_area"]
 modulate = Color(1, 0.14, 0.842333, 1)
-position = Vector2(56, 9)
+position = Vector2(37, 8)
 scale = Vector2(2.23644, 1.81479)
 shape = SubResource("CapsuleShape2D_qcyjf")
 

@@ -44,7 +44,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	player.hp += max(int(player.max_hp * list[level-1].value), 1)
-	if player.hp > player.max_hp:
-		player.hp = player.max_hp
+	var recovery = max(int(player.max_hp * list[level-1].value), 1)
+	player.hp_recovery(float(recovery))
 	pass # Replace with function body.

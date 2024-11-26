@@ -70,7 +70,8 @@ offset_bottom = 314.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
-text = "DESC"
+text = "DESCDESCDESCDESCDESCDESCDESCDESCDESCDESC"
+autowrap_mode = 1
 
 [node name="button1" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer/ColorRect"]
 unique_name_in_owner = true
@@ -131,6 +132,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "DESC"
+autowrap_mode = 1
 
 [node name="button2" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer2/ColorRect"]
 unique_name_in_owner = true
@@ -191,6 +193,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "DESC"
+autowrap_mode = 1
 
 [node name="button3" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/MarginContainer3/ColorRect"]
 unique_name_in_owner = true

@@ -11,8 +11,8 @@ class_name Enemy
 var dir = Vector2.ONE
 var speed = 100
 var player : Player = null
-var max_hp = 100
-var hurt = 4
+var max_hp = 1000
+var hurt = 40
 var hp = max_hp
 var isDead = false
 var isCanAttack = false
@@ -56,9 +56,9 @@ func attack():
 	attack_effect_area.monitoring = true
 	pass
 	
-func hurted(hurt: int, position: Vector2) -> void:
+func hurted(hurt: int, position: Vector2) -> bool:
 	if isDead:
-		return
+		return false
 	hp -= hurt
 	hp_bar.value = 100 * hp / max_hp
 	var hurt_text_obj: HurtText = hurt_text.instantiate()
@@ -73,7 +73,7 @@ func hurted(hurt: int, position: Vector2) -> void:
 			"scale": Vector2(5, 5)
 		})
 		#anim.play("hurt")
-		global_position -= (position - global_position).normalized() * hurt
+		global_position -= (position - global_position).normalized() * hurt / 10
 	else : 
 		#似了
 		isDead = true
@@ -93,6 +93,8 @@ func hurted(hurt: int, position: Vector2) -> void:
 		hp_bar.hide()
 		await get_tree().create_timer(1).timeout
 		queue_free()
+		return true
+	return false
 
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
