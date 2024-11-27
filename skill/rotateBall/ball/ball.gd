@@ -21,5 +21,5 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 	if body.is_in_group("enemy"):
 		var enemy = body as Enemy
 		enemy.hurted(hurt, global_position)
-		player.hp_recovery(1)
+		player.hp_recovery(int(hurt / 100))
 	pass # Replace with function body.

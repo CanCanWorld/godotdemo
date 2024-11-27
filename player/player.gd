@@ -17,8 +17,6 @@ var exp = 0
 var level = 1
 var recovery = 0
 var attack = 100
-var paths : Array[Vector2] = []
-var last_position : Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +29,6 @@ func _process(delta: float) -> void:
 	walk()
 	move_and_slide()
 	judge_hp()
-	add_path()
 	pass
 	
 func choosePlayer(name: String):
@@ -83,6 +80,8 @@ func get_exp():
 		update.show()
 
 func hp_recovery(recovery: float):
+	if recovery <= 0:
+		recovery = 1
 	hp += recovery
 	if hp > max_hp:
 		hp = max_hp
@@ -133,13 +132,3 @@ func walk():
 				playerAnim.animation = "idle"
 			elif lastDir.y < 0:
 				playerAnim.animation = "idle_back"
-	
-func add_path():
-	if paths.size() == 0:
-		paths.append(global_position)
-	if global_position.distance_to(last_position) >= 100:
-		print("移动了200")
-		paths.append(last_position)
-		#print(paths)
-		last_position = global_position
-	pass

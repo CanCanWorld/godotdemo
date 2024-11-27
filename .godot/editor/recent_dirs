@@ -1,5 +1,5 @@
-res://skill/body
 res://skill/longer
+res://player/assets/player1
 res://ui/prepare
 res://ui/end
 res://ui/start
@@ -17,6 +17,5 @@ res://
 res://animations
 res://hurt
 res://enemy
-res://player/assets/player1
 res://bullet
 res://player

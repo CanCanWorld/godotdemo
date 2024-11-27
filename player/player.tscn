@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://bpbe08quey0ls"]
+[gd_scene load_steps=118 format=3 uid="uid://bpbe08quey0ls"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_att55"]
 [ext_resource type="Shader" path="res://player/player_outline.gdshader" id="2_hfqsa"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dkfhkxronqiua" path="res://player/assets/player1/64X128_Walking_Free.png" id="5_xo87u"]
 [ext_resource type="PackedScene" uid="uid://na41msqp2edm" path="res://skill/chop/chop.tscn" id="6_38h54"]
 [ext_resource type="PackedScene" uid="uid://flnir126l7k2" path="res://skill/rotateBall/rotate_ball.tscn" id="6_rnj4w"]
-[ext_resource type="PackedScene" uid="uid://c3kkmswqmvgkw" path="res://skill/longer/longer.tscn" id="8_y643d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kckde"]
 radius = 13.0
@@ -873,8 +872,6 @@ autoplay = "idle"
 [node name="chop" parent="." instance=ExtResource("6_38h54")]
 
 [node name="rotate_ball" parent="." instance=ExtResource("6_rnj4w")]
-
-[node name="longer" parent="." instance=ExtResource("8_y643d")]
 
 [connection signal="body_entered" from="collect_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="stop_area" to="." method="_on_stop_area_body_entered"]
