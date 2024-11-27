@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3kkmswqmvgkw"]
+
+[ext_resource type="PackedScene" uid="uid://chhhebe1fklyg" path="res://skill/longer/body.tscn" id="1_jee4i"]
+[ext_resource type="Script" path="res://skill/longer/longer.gd" id="1_jhpki"]
+
+[node name="longer" type="Node2D"]
+script = ExtResource("1_jhpki")
+
+[node name="body" parent="." instance=ExtResource("1_jee4i")]

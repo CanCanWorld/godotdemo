@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://chhhebe1fklyg"]
+
+[ext_resource type="Texture2D" uid="uid://bdgy7auyy7cx5" path="res://skill/longer/creature-sheet.png" id="1_wkbqx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ys4p"]
+atlas = ExtResource("1_wkbqx")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1sjs"]
+atlas = ExtResource("1_wkbqx")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdi61"]
+atlas = ExtResource("1_wkbqx")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hxqc"]
+atlas = ExtResource("1_wkbqx")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhs4p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ys4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1sjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hxqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="body" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.26551, 2.26551)
+sprite_frames = SubResource("SpriteFrames_bhs4p")
+frame_progress = 0.146039

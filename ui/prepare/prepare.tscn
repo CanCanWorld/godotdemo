@@ -1,0 +1,163 @@
+[gd_scene load_steps=3 format=3 uid="uid://iyb7ob30wru5"]
+
+[ext_resource type="Texture2D" uid="uid://370ul0h7758b" path="res://assets/bg.webp" id="1_ea8bh"]
+[ext_resource type="Script" path="res://ui/prepare/prepare.gd" id="1_q3slf"]
+
+[node name="prepare" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_q3slf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ea8bh")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "角色选择"
+horizontal_alignment = 1
+
+[node name="row" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/row"]
+layout_mode = 2
+color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/row"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "鸡哥"
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "练习时长两年半的个人练习生，对球类的运用了如指掌。初始拥有闪电球。"
+
+[node name="btn1" type="Button" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "选择"
+
+[node name="row2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/row2"]
+layout_mode = 2
+color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/row2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row2/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "蛇哥"
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "特别在意自己的长度。每次升级都会变得更长，触碰敌人造成最大生命10%的伤害，当然也会对自己造成伤害。"
+
+[node name="btn2" type="Button" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "选择"
+
+[node name="row3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/row3"]
+layout_mode = 2
+color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/row3"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row3/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "刀哥"
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "拥有一把40m长的大砍刀，但是并夕夕买的。"
+
+[node name="btn3" type="Button" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "选择"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer/btn1" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer/btn2" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer/btn3" to="." method="_on_btn_3_pressed"]

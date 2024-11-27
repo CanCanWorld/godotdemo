@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0bi410mjua18"
-path="res://.godot/imported/nun_idle.png-ec80a98439d647730111c2497dc9ed98.ctex"
+uid="uid://bdgy7auyy7cx5"
+path="res://.godot/imported/creature-sheet.png-63fea1df62b1ef7a7e24b389ee1b568a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nun_idle.png"
-dest_files=["res://.godot/imported/nun_idle.png-ec80a98439d647730111c2497dc9ed98.ctex"]
+source_file="res://skill/longer/creature-sheet.png"
+dest_files=["res://.godot/imported/creature-sheet.png-63fea1df62b1ef7a7e24b389ee1b568a.ctex"]
 
 [params]
 

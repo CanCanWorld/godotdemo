@@ -1,3 +1,6 @@
+res://skill/body
+res://skill/longer
+res://ui/prepare
 res://ui/end
 res://ui/start
 res://skill/chop
@@ -17,4 +20,3 @@ res://enemy
 res://player/assets/player1
 res://bullet
 res://player
-res://bg_map
