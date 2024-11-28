@@ -70,7 +70,7 @@ func hurted(hurt: int, position: Vector2) -> bool:
 			"box": self,
 			"ani_name": "enemy_hurt",
 			"position": Vector2.ONE,
-			"scale": Vector2(5, 5)
+			"scale": Vector2(8, 8)
 		})
 		#anim.play("hurt")
 		global_position -= (position - global_position).normalized() * hurt / 10

@@ -1,6 +1,8 @@
 CollisionShape2D
-CharacterBody2D
+Timer
+Area2D
 AnimatedSprite2D
+CharacterBody2D
 Label
 VBoxContainer
 HBoxContainer
@@ -10,6 +12,3 @@ Container
 ColorRect
 TextureRect
 Node2D
-Sprite2D
-CanvasLayer
-Timer

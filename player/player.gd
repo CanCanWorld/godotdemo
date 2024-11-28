@@ -11,12 +11,12 @@ var sprintTime = 0
 var lastDir = Vector2.ZERO
 var max_hp = 1000
 var hp = max_hp
-var max_exp = 10
+var max_exp = 2
 var base_exp = 2
 var exp = 0
 var level = 1
 var recovery = 0
-var attack = 100
+var attack = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

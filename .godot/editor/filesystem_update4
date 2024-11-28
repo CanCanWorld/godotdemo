@@ -3,6 +3,8 @@ res://drop_item/drop_item_outline.gdshader
 res://player/player_outline.gdshader
 res://skill/rotateBall/rotate_ball.gd
 res://enemy/enemy_outline.gdshader
+res://bg_map/bg_map.gd
+res://ui/start/start.gd
 res://player/player.tscn
 res://enemy/enemy.tscn
 res://enemy/now_enemies.tscn
@@ -16,3 +18,11 @@ res://ui/start/start.tscn
 res://ui/end/end.tscn
 res://ui/prepare/prepare.tscn
 res://recovery/recovery.tscn
+res://skill/bomb/bomb.tscn
+res://ui/prepare/prepare.gd
+res://skill/bomb/bomb.gd
+res://animations/animations.tscn
+res://enemy/enemy.gd
+res://scene/update/scene_update.gd
+res://GameMain.gd
+res://player/player.gd

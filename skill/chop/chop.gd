@@ -4,6 +4,7 @@ class_name Chop
 @onready var anim = $anim
 @onready var area = $area
 @onready var anim_player = $AnimationPlayer
+@onready var sword_anim = $sword_anim
 var base_hurt = 200
 var hurt = base_hurt
 var add_attack = 0

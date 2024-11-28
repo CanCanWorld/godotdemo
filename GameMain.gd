@@ -5,6 +5,8 @@ extends Node
 @onready var drop_item_tscn = preload("res://drop_item/drop_item.tscn")
 @onready var drop_item : DropItem
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim = anim_tscn.instantiate()

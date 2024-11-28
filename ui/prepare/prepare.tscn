@@ -36,7 +36,7 @@ theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -69,12 +69,12 @@ theme_override_constants/separation = 10
 [node name="name" type="Label" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "鸡哥"
+text = "老季"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "练习时长两年半的个人练习生，对球类的运用了如指掌。初始拥有闪电球。"
+text = "明星立场"
 
 [node name="btn1" type="Button" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -107,12 +107,12 @@ theme_override_constants/separation = 10
 [node name="name" type="Label" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "蛇哥"
+text = "老王"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "特别在意自己的长度。每次升级都会变得更长，触碰敌人造成最大生命10%的伤害，当然也会对自己造成伤害。"
+text = "舍长的职责"
 
 [node name="btn2" type="Button" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -145,14 +145,90 @@ theme_override_constants/separation = 10
 [node name="name" type="Label" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "刀哥"
+text = "金山"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "拥有一把40m长的大砍刀，但是并夕夕买的。"
+text = "又长又强"
 
 [node name="btn3" type="Button" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "选择"
+
+[node name="row4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/row4"]
+layout_mode = 2
+color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/row4"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row4/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "老汪"
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "唱跳tap篮球"
+
+[node name="btn4" type="Button" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "选择"
+
+[node name="row5" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/row5"]
+layout_mode = 2
+color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/row5"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row5/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "帅哥"
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "小开"
+
+[node name="btn5" type="Button" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -161,3 +237,5 @@ text = "选择"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer/btn1" to="." method="_on_btn_1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer/btn2" to="." method="_on_btn_2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer/btn3" to="." method="_on_btn_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer/btn4" to="." method="_on_btn_4_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer/btn5" to="." method="_on_btn_5_pressed"]
