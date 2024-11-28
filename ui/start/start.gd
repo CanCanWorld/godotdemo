@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	print("开始游戏")
 	hide()
+	get_tree().paused = false
 	pass # Replace with function body.
