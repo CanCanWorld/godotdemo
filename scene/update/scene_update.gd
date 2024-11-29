@@ -29,9 +29,9 @@ var default_update_list : Array[UpdateType] = [
 var updateList : Array[UpdateType] = default_update_list
 
 var ji_update_list : Array[UpdateType] = [
-	UpdateType.new("影响力增加", "明星气场的攻击范围增大10%", Callable(self, "bomb_big")),
-	UpdateType.new("明星的代价", "明星气场的击杀会增加2点基础血量，降低1点基础攻击力", Callable(self, "bomb_hp")),
-	UpdateType.new("卷起来了", "明星气场的攻击频率提高10%", Callable(self, "bomb_fps")),
+	UpdateType.new("影响力增加", "明星气场的攻击范围增大20%", Callable(self, "bomb_big")),
+	UpdateType.new("明星的代价", "明星气场的击杀会增加4点基础血量，降低1点基础攻击力", Callable(self, "bomb_hp")),
+	UpdateType.new("卷起来了", "明星气场的攻击频率提高20%", Callable(self, "bomb_fps")),
 ]
 
 var wang_update_list = []
@@ -43,9 +43,9 @@ var shan_update_list = [
 ]
 
 var wang2_update_list = [
-	UpdateType.new("量变引起质变", "增加一个暗影球", Callable(self, "add_dark_ball_num")),
-	UpdateType.new("指数增加，小子", "增加一排暗影球", Callable(self, "add_dark_ball_row")),
-	UpdateType.new("这有什么用？", "增加暗影球的移动速度10%", Callable(self, "add_dark_ball_speed")),
+	UpdateType.new("量变引起质变", "增加一个篮球", Callable(self, "add_dark_ball_num")),
+	UpdateType.new("指数增加，小子", "增加一排篮球", Callable(self, "add_dark_ball_row")),
+	UpdateType.new("这有什么用？", "增加篮球的移动速度10%", Callable(self, "add_dark_ball_speed")),
 ]
 
 var me_update_list : Array[UpdateType] = []
@@ -176,14 +176,14 @@ func chop_add_hp():
 
 func bomb_big():
 	var bomb : Bomb = player.get_node("bomb")
-	bomb.big(1.1)
+	bomb.big(1.2)
 	
 func bomb_hp():
 	var bomb : Bomb = player.get_node("bomb")
-	bomb.add_hp += 2
+	bomb.add_hp += 4
 	bomb.add_attack -= 1
 	
 func bomb_fps():
 	var bomb : Bomb = player.get_node("bomb")
-	bomb.fast(1.1)
+	bomb.fast(1.2)
 	

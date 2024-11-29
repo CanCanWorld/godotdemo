@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dvq8dv48gmdjw"]
+[gd_scene load_steps=81 format=3 uid="uid://dvq8dv48gmdjw"]
 
 [ext_resource type="Shader" path="res://enemy/enemy_outline.gdshader" id="1_nvk8d"]
 [ext_resource type="Texture2D" uid="uid://cikfh1bqubcjl" path="res://enemy/assets/enemy1/undead_walk_sheet.png" id="1_r8r5d"]
@@ -522,15 +522,12 @@ animations = [{
 radius = 6.0
 height = 26.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qw4nj"]
-radius = 86.977
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06r6o"]
 bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcyjf"]
-radius = 21.9098
-height = 57.3069
+radius = 24.7962
+height = 49.5925
 
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 z_index = 10
@@ -542,21 +539,13 @@ script = ExtResource("1_ustrh")
 material = SubResource("ShaderMaterial_3o0la")
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_f11sr")
-animation = &"run"
+animation = &"attack"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_310cj")
-
-[node name="attack_area" type="Area2D" parent="."]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
-shape = SubResource("CircleShape2D_qw4nj")
-
-[node name="timer_attack_cd" type="Timer" parent="."]
 
 [node name="hpBar" type="ProgressBar" parent="."]
 offset_left = -42.0
@@ -569,14 +558,14 @@ value = 100.0
 show_percentage = false
 
 [node name="attack_effect_area" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_effect_area"]
 modulate = Color(1, 0.14, 0.842333, 1)
-position = Vector2(37, 8)
+position = Vector2(9.09495e-13, 8)
 scale = Vector2(2.23644, 1.81479)
 shape = SubResource("CapsuleShape2D_qcyjf")
 
-[connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
-[connection signal="body_exited" from="attack_area" to="." method="_on_attack_area_body_exited"]
-[connection signal="timeout" from="timer_attack_cd" to="." method="_on_attack_cd_timeout"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="attack_effect_area" to="." method="_on_attack_effect_area_body_entered"]
+[connection signal="body_exited" from="attack_effect_area" to="." method="_on_attack_effect_area_body_exited"]

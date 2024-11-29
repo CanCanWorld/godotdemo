@@ -25,6 +25,15 @@ func _on_btn_1_pressed() -> void:
 	hide()
 	player.add_child(bomb_tscn.instantiate())
 	update.chooseJi()
+	player.chooseJi()
+	player.once_passive_callable(Callable(
+		func():
+			Passive.half_base_exp()
+	))
+	player.passive_callable(Callable(
+		func():
+			Passive.max_hp_to_big()
+	))
 	get_tree().paused = false
 	pass # Replace with function body.
 
@@ -32,6 +41,7 @@ func _on_btn_1_pressed() -> void:
 func _on_btn_2_pressed() -> void:
 	hide()
 	update.chooseWang()
+	player.chooseWang()
 	get_tree().paused = false
 	pass # Replace with function body.
 
@@ -39,6 +49,7 @@ func _on_btn_2_pressed() -> void:
 func _on_btn_3_pressed() -> void:
 	hide()
 	update.chooseShan()
+	player.chooseShan()
 	player.add_child(chop_tscn.instantiate())
 	get_tree().paused = false
 	pass # Replace with function body.
@@ -47,6 +58,7 @@ func _on_btn_3_pressed() -> void:
 func _on_btn_4_pressed() -> void:
 	hide()
 	update.chooseWang2()
+	player.chooseWang2()
 	player.add_child(rotate_ball_tscn.instantiate())
 	get_tree().paused = false
 	pass # Replace with function body.
@@ -55,6 +67,7 @@ func _on_btn_4_pressed() -> void:
 func _on_btn_5_pressed() -> void:
 	hide()
 	update.chooseMe()
+	player.chooseMe()
 	player.add_child(bomb_tscn.instantiate())
 	player.add_child(chop_tscn.instantiate())
 	player.add_child(rotate_ball_tscn.instantiate())

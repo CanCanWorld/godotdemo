@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func set_text(text: String):
-	hurt_text.text = "-" + text
+	hurt_text.text = text
 	anim.play("default")
 
 

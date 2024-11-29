@@ -1,50 +1,18 @@
-[gd_scene load_steps=36 format=3 uid="uid://bh1o6v2ejneim"]
+[gd_scene load_steps=31 format=3 uid="uid://bh1o6v2ejneim"]
 
 [ext_resource type="Script" path="res://animations/animations.gd" id="1_ehldu"]
-[ext_resource type="Texture2D" uid="uid://du38h1lw0xs3" path="res://animations/assets/Retro Impact Effect Pack 5 B.png" id="2_24iag"]
 [ext_resource type="Shader" path="res://base/base_outline.gdshader" id="2_uevu2"]
 [ext_resource type="Texture2D" uid="uid://cv3qiwtid8x4l" path="res://animations/2_100x100px.png" id="3_5sdyq"]
+[ext_resource type="Texture2D" uid="uid://dpm4hlube7cty" path="res://animations/bloodfx001_01.png" id="3_qpkdo"]
+[ext_resource type="Texture2D" uid="uid://cwvpc0ufikfy4" path="res://animations/bloodfx001_02.png" id="4_fwvle"]
+[ext_resource type="Texture2D" uid="uid://cwhpkuu22a11k" path="res://animations/bloodfx001_03.png" id="5_e166a"]
+[ext_resource type="Texture2D" uid="uid://6y32syixygus" path="res://animations/bloodfx001_04.png" id="6_5q1lg"]
+[ext_resource type="Texture2D" uid="uid://bdd7un35s4tyl" path="res://animations/bloodfx001_05.png" id="7_eo27v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_poack"]
 shader = ExtResource("2_uevu2")
 shader_parameter/outline_color = Color(4, 0, 0, 0.843)
 shader_parameter/outline_width = 1.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4sutv"]
-atlas = ExtResource("2_24iag")
-region = Rect2(0, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l60qe"]
-atlas = ExtResource("2_24iag")
-region = Rect2(64, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_on5cs"]
-atlas = ExtResource("2_24iag")
-region = Rect2(128, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejs23"]
-atlas = ExtResource("2_24iag")
-region = Rect2(192, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iavjq"]
-atlas = ExtResource("2_24iag")
-region = Rect2(256, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5ksp"]
-atlas = ExtResource("2_24iag")
-region = Rect2(320, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3g7oy"]
-atlas = ExtResource("2_24iag")
-region = Rect2(384, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l2xax"]
-atlas = ExtResource("2_24iag")
-region = Rect2(448, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ravj"]
-atlas = ExtResource("2_24iag")
-region = Rect2(512, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kwa3q"]
 atlas = ExtResource("3_5sdyq")
@@ -130,35 +98,188 @@ region = Rect2(100, 300, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4sutv")
+"texture": ExtResource("3_qpkdo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l60qe")
+"texture": ExtResource("4_fwvle")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_on5cs")
+"texture": ExtResource("5_e166a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ejs23")
+"texture": ExtResource("6_5q1lg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iavjq")
+"texture": ExtResource("7_eo27v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l5ksp")
+"texture": ExtResource("7_eo27v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3g7oy")
+"texture": ExtResource("7_eo27v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l2xax")
+"texture": ExtResource("7_eo27v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ravj")
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo27v")
 }],
 "loop": false,
 "name": &"enemy_dead",
-"speed": 10.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -234,8 +355,8 @@ material = SubResource("ShaderMaterial_poack")
 position = Vector2(0, 1)
 scale = Vector2(0.399999, 0.399999)
 sprite_frames = SubResource("SpriteFrames_kolue")
-animation = &"enemy_hurt"
-frame = 19
+animation = &"enemy_dead"
+frame = 4
 frame_progress = 1.0
 
 [connection signal="animation_finished" from="all_animations" to="." method="_on_all_animations_animation_finished"]

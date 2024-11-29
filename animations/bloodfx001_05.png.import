@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjjsv0iisb7h8"
-path="res://.godot/imported/64X128_Runing_Free.png-8a2b3aee9244ab93399c896e753732ca.ctex"
+uid="uid://bdd7un35s4tyl"
+path="res://.godot/imported/bloodfx001_05.png-83c7ab1de4c90c61f5633e3d4fa63f4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/player1/64X128_Runing_Free.png"
-dest_files=["res://.godot/imported/64X128_Runing_Free.png-8a2b3aee9244ab93399c896e753732ca.ctex"]
+source_file="res://animations/bloodfx001_05.png"
+dest_files=["res://.godot/imported/bloodfx001_05.png-83c7ab1de4c90c61f5633e3d4fa63f4d.ctex"]
 
 [params]
 

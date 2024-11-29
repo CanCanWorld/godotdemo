@@ -1,7 +1,13 @@
-[gd_scene load_steps=74 format=3 uid="uid://d0piqrxfvqosv"]
+[gd_scene load_steps=76 format=3 uid="uid://d0piqrxfvqosv"]
 
 [ext_resource type="Script" path="res://skill/bomb/bomb.gd" id="1_7ose5"]
 [ext_resource type="Texture2D" uid="uid://xoy4xpw68i0c" path="res://skill/bomb/_426x426_big.png" id="1_ripm3"]
+[ext_resource type="Shader" path="res://base/base_outline.gdshader" id="2_1qcmg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqvul"]
+shader = ExtResource("2_1qcmg")
+shader_parameter/outline_color = Color(2, 2, 0, 1)
+shader_parameter/outline_width = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7uix"]
 atlas = ExtResource("1_ripm3")
@@ -504,6 +510,7 @@ script = ExtResource("1_7ose5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.843137)
+material = SubResource("ShaderMaterial_vqvul")
 sprite_frames = SubResource("SpriteFrames_ge7kj")
 autoplay = "default"
 frame_progress = 0.58568
@@ -515,8 +522,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_s26fi")
 
-[node name="Timer" type="Timer" parent="."]
-
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

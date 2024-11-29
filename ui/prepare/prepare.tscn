@@ -61,7 +61,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -73,8 +73,13 @@ text = "老季"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "明星立场"
+theme_override_font_sizes/font_size = 20
+text = "主动技能
+明星立场：作为宿舍唯一上过电视的人，自带明星立场，对靠近的敌人造成基础攻击+最大生命上限20%的伤害。
+被动技能
+学霸：全村学习最好的人，获取经验的效率提高100%。
+昔日的荣光：最大生命值越高，体型越大。
+自律：攻击力越高，体型越小。"
 
 [node name="btn1" type="Button" parent="MarginContainer/VBoxContainer/row/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -99,7 +104,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row2/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -111,8 +116,9 @@ text = "老王"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "舍长的职责"
+theme_override_font_sizes/font_size = 20
+text = "主动技能
+舍长的职责"
 
 [node name="btn2" type="Button" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -137,7 +143,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row3/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -149,8 +155,10 @@ text = "金山"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "又长又强"
+theme_override_font_sizes/font_size = 20
+text = "主动技能
+又长又强：拥有一把四十米长的大砍刀，但是并夕夕买的，大砍刀造成100点基础伤害+50%攻击力的伤害。
+"
 
 [node name="btn3" type="Button" parent="MarginContainer/VBoxContainer/row3/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -175,7 +183,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row4/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -187,8 +195,11 @@ text = "老汪"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "唱跳tap篮球"
+theme_override_font_sizes/font_size = 20
+text = "主动技能
+唱跳rap篮球：宿舍唯一会打篮球的人，初始自带一个篮球，篮球造成50点基础伤害+基础攻击10%的伤害，并恢复伤害量1%的血量，最低1点。
+被动技能
+宿舍第五人"
 
 [node name="btn4" type="Button" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -213,7 +224,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row5/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -225,8 +236,8 @@ text = "帅哥"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "小开"
+theme_override_font_sizes/font_size = 20
+text = "小开：有所有人的技能。"
 
 [node name="btn5" type="Button" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)

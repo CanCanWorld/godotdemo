@@ -1,8 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://na41msqp2edm"]
+[gd_scene load_steps=19 format=3 uid="uid://na41msqp2edm"]
 
 [ext_resource type="Texture2D" uid="uid://dd3dlifydbqm4" path="res://skill/chop/slash 01.png" id="1_d24ky"]
 [ext_resource type="Script" path="res://skill/chop/chop.gd" id="1_q2m0h"]
+[ext_resource type="Shader" path="res://base/base_outline.gdshader" id="2_it60a"]
 [ext_resource type="Texture2D" uid="uid://bp8yi1hc1sjll" path="res://skill/chop/WeaponsPack.png" id="3_idpaq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_csmuo"]
+shader = ExtResource("2_it60a")
+shader_parameter/outline_color = Color(2, 0, 2, 1)
+shader_parameter/outline_width = 2.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85uy0"]
 atlas = ExtResource("1_d24ky")
@@ -136,6 +142,7 @@ _data = {
 script = ExtResource("1_q2m0h")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_csmuo")
 position = Vector2(69, 3)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_mgv6g")

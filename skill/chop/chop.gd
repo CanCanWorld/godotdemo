@@ -5,7 +5,7 @@ class_name Chop
 @onready var area = $area
 @onready var anim_player = $AnimationPlayer
 @onready var sword_anim = $sword_anim
-var base_hurt = 200
+var base_hurt = 100
 var hurt = base_hurt
 var add_attack = 0
 var add_hp = 0
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	hurt = base_hurt + player.attack
+	hurt = base_hurt + player.attack / 2
 	scale = Vector2(now_scale, now_scale)
 	position = (get_global_mouse_position() - player.global_position).normalized() * 100
 	look_at(get_global_mouse_position())

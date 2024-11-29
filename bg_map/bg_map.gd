@@ -5,7 +5,6 @@ extends Node2D
 @onready var prepare = $prepare
 
 func _ready() -> void:
-	#random_tile()
 	start.show()
 	prepare.show()
 	pass

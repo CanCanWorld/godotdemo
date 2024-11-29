@@ -3,7 +3,7 @@ class_name RotateBall
 
 @onready var ball_tscn = preload("res://skill/rotateBall/ball/ball.tscn")
 
-var ball_num = 3
+var ball_num = 1
 var ball_radius = 140
 var speed = 10
 var row = 1

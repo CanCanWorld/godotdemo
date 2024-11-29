@@ -1,6 +1,16 @@
+res://skill/trap/hand
+res://skill/trap
+res://skill/eggs
+D:/project/godot/build/windows
+D:/素材
+res://passive
+res://player/assets/me
+res://player/assets/ji
+res://player/assets/wang2
+res://player/assets/shan
+res://player/assets/wang
 res://animations
 res://skill/bomb
-res://player/assets/player1
 res://ui/prepare
 res://ui/end
 res://ui/start
@@ -10,12 +20,3 @@ res://skill/rotateBall
 res://skill/hpRecovery
 res://scene/update
 res://animations/assets
-res://enemy/assets/enemy1
-res://ui
-res://drop_item/assets
-res://drop_item
-res://
-res://hurt
-res://enemy
-res://bullet
-res://player

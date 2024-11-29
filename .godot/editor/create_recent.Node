@@ -1,11 +1,11 @@
-CollisionShape2D
 Timer
-Area2D
 AnimatedSprite2D
-CharacterBody2D
-Label
-VBoxContainer
+CollisionShape2D
+Area2D
 HBoxContainer
+Label
+CharacterBody2D
+VBoxContainer
 Button
 MarginContainer
 Container

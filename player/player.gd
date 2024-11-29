@@ -2,25 +2,63 @@ extends CharacterBody2D
 
 class_name Player
 
-var speed = 8
-var sprintTime = 0
-@onready var playerAnim = $PlayerAnim
 @onready var ball = $RigidBody2D
-@onready var sprintProgress = $SprintProgress
+@onready var ji = $ji
+@onready var wang = $wang
+@onready var shan = $shan
+@onready var wang2 = $wang2
+@onready var me = $me
+@onready var playerAnim = $ji
 @onready var recovery_tscn = preload("res://recovery/recovery.tscn")
+
+var speed = 4
+var sprintTime = 0
 var lastDir = Vector2.ZERO
-var max_hp = 1000
-var hp = max_hp
-var max_exp = 2
-var base_exp = 2
+var base_max_hp = 1000
+var max_hp = base_max_hp
+var hp = base_max_hp
+var base_exp = 6
+var max_exp = base_exp
 var exp = 0
 var level = 1
 var recovery = 0
-var attack = 200
+var base_attack = 100
+var attack = base_attack
+var isFirst = false
+var once_passive : Callable = func(): pass
+var passive : Callable = func(): pass
+
+func once_passive_callable(callable: Callable):
+	once_passive = callable
+	isFirst = true
+
+func passive_callable(callable: Callable):
+	passive = callable
+
+
+func chooseJi():
+	playerAnim = ji
+	ji.show()
+
+func chooseWang():
+	playerAnim = wang
+	wang.show()
+
+func chooseShan():
+	playerAnim = shan
+	shan.show()
+
+func chooseWang2():
+	playerAnim = wang2
+	wang2.show()
+
+func chooseMe():
+	playerAnim = me
+	me.show()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#choosePlayer("player1")
 	pass # Replace with function body.
 
 
@@ -29,28 +67,11 @@ func _process(delta: float) -> void:
 	walk()
 	move_and_slide()
 	judge_hp()
+	if isFirst: 
+		once_passive.call()
+		isFirst = false
+	passive.call()
 	pass
-	
-func choosePlayer(name: String):
-	playerAnim.sprite_frames.clear_all()
-	var sprite_frames_custom = SpriteFrames.new()
-	sprite_frames_custom.add_animation("run")
-	sprite_frames_custom.set_animation_loop("run", true	)
-	sprite_frames_custom.set_animation_speed("run", 15)
-	var texture_size = Vector2(192, 48)
-	var frame_size = Vector2(48, 48)
-	var full_texture = load("res://player/assets/" + name + "/creature-sheet.png")
-	var x_num = int(texture_size.x / frame_size.x)
-	var y_num = int(texture_size.y / frame_size.y)
-	for y in y_num:
-		for x in x_num:
-			var frame = AtlasTexture.new()
-			frame.atlas = full_texture
-			frame.region = Rect2(Vector2(x, y) * frame_size, frame_size)
-			sprite_frames_custom.add_frame("run", frame)
-	playerAnim.sprite_frames = sprite_frames_custom
-	pass
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("drop_item"):
@@ -80,6 +101,8 @@ func get_exp():
 		update.show()
 
 func hp_recovery(recovery: float):
+	if hp == max_hp:
+		return
 	if recovery <= 0:
 		recovery = 1
 	hp += recovery
@@ -88,10 +111,11 @@ func hp_recovery(recovery: float):
 	var recovery_text_obj: RecoveryText = recovery_tscn.instantiate()
 	add_child(recovery_text_obj)
 	recovery_text_obj.set_text(str(recovery))
-	recovery_text_obj.global_position = global_position
+	recovery_text_obj.global_position = global_position - Vector2(randi_range(0, 40), 0)
 
 func hurt(attack : float):
 	hp -= attack
+	
 
 func add_max_hp(value: int): 
 	max_hp += value
@@ -110,25 +134,10 @@ func walk():
 	if vector.x != 0||vector.y != 0:
 		#行走
 		lastDir = vector
-		playerAnim.speed_scale = 1
-		if vector.x > 0:
-			playerAnim.animation = "walk_right"
-		elif vector.x < 0:
-			playerAnim.animation = "walk_left"
-		elif vector.x == 0:
-			if vector.y > 0:
-				playerAnim.animation = "walk"
-			elif vector.y < 0:
-				playerAnim.animation = "walk_back"
+		playerAnim.animation = "run"
 		position += vector * speed
+		if vector.x != 0:
+			playerAnim.flip_h = vector.x < 0
 	if vector.x == 0&&vector.y == 0:
 		#停下
-		if lastDir.x > 0:
-			playerAnim.animation = "idle_right"
-		elif lastDir.x < 0:
-			playerAnim.animation = "idle_left"
-		elif lastDir.x == 0:
-			if lastDir.y > 0:
-				playerAnim.animation = "idle"
-			elif lastDir.y < 0:
-				playerAnim.animation = "idle_back"
+		playerAnim.animation = "idle"

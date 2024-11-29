@@ -1,7 +1,7 @@
 extends Node2D
 class_name Ball
 
-var base_hurt = 20
+var base_hurt = 50
 var hurt = base_hurt
 var player : Player
 

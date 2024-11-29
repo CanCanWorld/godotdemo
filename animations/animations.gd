@@ -30,4 +30,3 @@ func play_anim(options):
 
 func _on_all_animations_animation_finished() -> void:
 	queue_free()
-	pass # Replace with function body.
