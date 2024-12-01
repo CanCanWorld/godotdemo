@@ -118,7 +118,9 @@ text = "老王"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "主动技能
-舍长的职责"
+舍长的职责：初始拥有4个刚孵化出来的蛋。
+被动技能
+被工作抹平了棱角：初始攻击力为0。"
 
 [node name="btn2" type="Button" parent="MarginContainer/VBoxContainer/row2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -197,9 +199,7 @@ text = "老汪"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "主动技能
-唱跳rap篮球：宿舍唯一会打篮球的人，初始自带一个篮球，篮球造成50点基础伤害+基础攻击10%的伤害，并恢复伤害量1%的血量，最低1点。
-被动技能
-宿舍第五人"
+唱跳rap篮球：宿舍唯一会打篮球的人，初始自带一个篮球，篮球造成50点基础伤害+基础攻击10%的伤害，并恢复伤害量1%的血量，最低1点。"
 
 [node name="btn4" type="Button" parent="MarginContainer/VBoxContainer/row4/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -237,7 +237,8 @@ text = "帅哥"
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "小开：有所有人的技能。"
+text = "主动技能
+冲动消费：每10秒创建应该消费陷阱，持续10秒钟，持续对敌人造成20+10%基础攻击力的伤害，并将敌人向中心牵引。"
 
 [node name="btn5" type="Button" parent="MarginContainer/VBoxContainer/row5/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)

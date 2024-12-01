@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://cird7b0631fai"]
+[gd_scene load_steps=5 format=3 uid="uid://cird7b0631fai"]
+
+[ext_resource type="PackedScene" uid="uid://ofa628jh5ouk" path="res://skill/eggs/egg1/egg_1.tscn" id="1_nt2k5"]
+[ext_resource type="PackedScene" uid="uid://c4pj2l324ujdq" path="res://skill/eggs/egg2/egg_2.tscn" id="2_m5uw8"]
+[ext_resource type="PackedScene" uid="uid://ckxu3ncql2ssp" path="res://skill/eggs/egg3/egg_3.tscn" id="3_g07ox"]
+[ext_resource type="PackedScene" uid="uid://dfcpqpy051bgl" path="res://skill/eggs/egg4/egg_4.tscn" id="4_m2l2g"]
 
 [node name="eggs" type="Node2D"]
+
+[node name="egg1" parent="." instance=ExtResource("1_nt2k5")]
+position = Vector2(0, -90)
+
+[node name="egg2" parent="." instance=ExtResource("2_m5uw8")]
+position = Vector2(90, 0)
+
+[node name="egg3" parent="." instance=ExtResource("3_g07ox")]
+position = Vector2(0, 90)
+
+[node name="egg4" parent="." instance=ExtResource("4_m2l2g")]
+position = Vector2(-90, 0)

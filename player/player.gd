@@ -17,7 +17,7 @@ var lastDir = Vector2.ZERO
 var base_max_hp = 1000
 var max_hp = base_max_hp
 var hp = base_max_hp
-var base_exp = 6
+var base_exp = 2
 var max_exp = base_exp
 var exp = 0
 var level = 1
@@ -27,6 +27,8 @@ var attack = base_attack
 var isFirst = false
 var once_passive : Callable = func(): pass
 var passive : Callable = func(): pass
+var last_position : Vector2 = Vector2.ZERO
+var isApp = false
 
 func once_passive_callable(callable: Callable):
 	once_passive = callable
@@ -133,11 +135,29 @@ func walk():
 	var vector = Input.get_vector("左","右","上", "下")
 	if vector.x != 0||vector.y != 0:
 		#行走
+		isApp = false
 		lastDir = vector
 		playerAnim.animation = "run"
 		position += vector * speed
 		if vector.x != 0:
 			playerAnim.flip_h = vector.x < 0
 	if vector.x == 0&&vector.y == 0:
+		if isApp:
+			return
+		#停下
+		playerAnim.animation = "idle"
+
+func walk_app(vector):
+	if vector.x != 0||vector.y != 0:
+		#行走
+		isApp = true
+		lastDir = vector
+		playerAnim.animation = "run"
+		position += vector * speed
+		if vector.x != 0:
+			playerAnim.flip_h = vector.x < 0
+	if vector.x == 0&&vector.y == 0:
+		if !isApp:
+			return
 		#停下
 		playerAnim.animation = "idle"

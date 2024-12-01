@@ -1,0 +1,149 @@
+[gd_scene load_steps=21 format=3 uid="uid://5vst60dkico7"]
+
+[ext_resource type="Script" path="res://skill/trap/vortex/vortex.gd" id="1_5ov7n"]
+[ext_resource type="Texture2D" uid="uid://cyefdqps2u76p" path="res://skill/trap/vortex/pipo-gate01b192.png" id="2_h4umu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_symtv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcr1n"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwcs8"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s21iq"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ak5k"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfbru"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_311tk"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdwt5"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns6ex"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56xfn"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqjip"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aot5"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1iot"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w24sy"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f6rw"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1tai"]
+atlas = ExtResource("2_h4umu")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2373"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcr1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwcs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s21iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ak5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfbru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_311tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdwt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns6ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56xfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqjip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aot5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1iot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w24sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f6rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1tai")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2qjye"]
+radius = 279.732
+
+[node name="vortex" type="Node2D"]
+script = ExtResource("1_5ov7n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.372549)
+material = SubResource("ShaderMaterial_symtv")
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_x2373")
+autoplay = "default"
+frame_progress = 0.434766
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_2qjye")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

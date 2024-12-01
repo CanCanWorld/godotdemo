@@ -7,6 +7,8 @@ extends CanvasLayer
 @onready var time_label : Label = %time
 var player : Player
 var time = 600
+var press_position : Vector2 = Vector2.ZERO
+var last_drag_position : Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +29,8 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	time -= 1
+	var now_enemies : NowEnemies = get_tree().get_first_node_in_group("now_enemies")
+	now_enemies.set_wait_time(max(0.0016 * time, 0.01))
 	time_label.text = str(time)
 	if time == 0:
 		get_tree().paused = true
@@ -34,3 +38,5 @@ func _on_timer_timeout() -> void:
 		end.is_success = true
 		end.show()
 	pass # Replace with function body.
+
+	

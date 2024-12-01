@@ -1,7 +1,16 @@
-res://skill/trap/hand
+D:/project/godot/godotdemo/output
+D:/software/Android/sdk
+D:/software/Android Studio/jbr
+D:/project/godot/godotdemo/key
+D:/software/Android Studio/jbr/bin
+D:/software/Android
+res://skill/trap/vortex
+res://skill/eggs/egg4
+res://skill/eggs/egg3
+res://skill/eggs/egg2
+res://skill/eggs/egg1
 res://skill/trap
 res://skill/eggs
-D:/project/godot/build/windows
 D:/素材
 res://passive
 res://player/assets/me
@@ -16,7 +25,3 @@ res://ui/end
 res://ui/start
 res://skill/chop
 res://skill/rotateBall/assets
-res://skill/rotateBall
-res://skill/hpRecovery
-res://scene/update
-res://animations/assets

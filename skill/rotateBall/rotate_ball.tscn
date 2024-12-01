@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://skill/rotateBall/rotate_ball.gd" id="1_fawct"]
 
-[node name="rotate_ball" type="Node2D"]
+[node name="rotate_ball" type="Node2D" groups=["rotate_ball"]]
 script = ExtResource("1_fawct")

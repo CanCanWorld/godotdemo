@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyvcoldpbpy5r"]
+[gd_scene load_steps=8 format=3 uid="uid://cyvcoldpbpy5r"]
 
 [ext_resource type="Script" path="res://ui/game_ui.gd" id="1_r4l56"]
+[ext_resource type="Script" path="res://ui/mobile_joy.gd" id="2_4g1ko"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncfkt"]
 bg_color = Color(0.215902, 0.215902, 0.215902, 1)
@@ -10,6 +11,14 @@ bg_color = Color(1, 0.340975, 0.296558, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuj6t"]
 bg_color = Color(0, 0.723932, 0.246459, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qx18w"]
+radius = 50.0
+height = 100.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_ybwmk"]
+radius = 15.0
+height = 30.0
 
 [node name="game_ui" type="CanvasLayer"]
 script = ExtResource("1_r4l56")
@@ -151,5 +160,22 @@ theme_override_constants/margin_top = 20
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+
+[node name="Mobile_Joy" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4g1ko")
+
+[node name="out_joy" type="MeshInstance2D" parent="Mobile_Joy"]
+modulate = Color(0.415686, 0.419608, 0.419608, 1)
+mesh = SubResource("SphereMesh_qx18w")
+
+[node name="in_joy" type="MeshInstance2D" parent="Mobile_Joy"]
+modulate = Color(0.180392, 0.180392, 0.180392, 1)
+mesh = SubResource("SphereMesh_ybwmk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

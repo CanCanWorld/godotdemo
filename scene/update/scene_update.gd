@@ -30,7 +30,7 @@ var updateList : Array[UpdateType] = default_update_list
 
 var ji_update_list : Array[UpdateType] = [
 	UpdateType.new("影响力增加", "明星气场的攻击范围增大20%", Callable(self, "bomb_big")),
-	UpdateType.new("明星的代价", "明星气场的击杀会增加4点基础血量，降低1点基础攻击力", Callable(self, "bomb_hp")),
+	UpdateType.new("明星的代价", "明星气场的击杀会增加5点基础血量，降低1点基础攻击力", Callable(self, "bomb_hp")),
 	UpdateType.new("卷起来了", "明星气场的攻击频率提高20%", Callable(self, "bomb_fps")),
 ]
 
@@ -48,11 +48,19 @@ var wang2_update_list = [
 	UpdateType.new("这有什么用？", "增加篮球的移动速度10%", Callable(self, "add_dark_ball_speed")),
 ]
 
-var me_update_list : Array[UpdateType] = []
+var me_update_list : Array[UpdateType] = [
+	UpdateType.new("促销陷阱", "增加消费陷阱的范围20%", Callable(self, "trap_big")),
+	UpdateType.new("自动续费", "增加消费陷阱的攻击频率20%", Callable(self, "trap_attack_speed")),
+	UpdateType.new("冲动消费", "增加消费陷阱的生成频率20%", Callable(self, "trap_cd")),
+]
 
 func chooseJi():
 	updateList.append_array(ji_update_list)
 func chooseWang():
+	wang_update_list.append_array(ji_update_list)
+	wang_update_list.append_array(shan_update_list)
+	wang_update_list.append_array(wang2_update_list)
+	wang_update_list.append_array(me_update_list)
 	updateList.append_array(wang_update_list)
 func chooseShan():
 	updateList.append_array(shan_update_list)
@@ -142,48 +150,60 @@ func hp_recovery():
 
 func add_dark_ball_num():
 	print("暗黑球，加个")
-	var rotate_ball : RotateBall = player.get_node("rotate_ball")
+	var rotate_ball : RotateBall = get_tree().get_first_node_in_group("rotate_ball")
 	rotate_ball.ball_num += 1
 	rotate_ball.add_ball()
 
 func add_dark_ball_row():
 	print("暗黑球，加排")
-	var rotate_ball : RotateBall = player.get_node("rotate_ball")
+	var rotate_ball : RotateBall = get_tree().get_first_node_in_group("rotate_ball")
 	rotate_ball.row += 1
 	rotate_ball.add_ball()
 
 func add_dark_ball_speed():
 	print("暗黑球，加速")
-	var rotate_ball : RotateBall = player.get_node("rotate_ball")
+	var rotate_ball : RotateBall = get_tree().get_first_node_in_group("rotate_ball")
 	print("暗黑球", rotate_ball.ball_num)
 	rotate_ball.speed = int(rotate_ball.speed * 1.2)
 	rotate_ball.add_ball()
 	
 func chop_scale():
 	print("大刀，范围")
-	var chop : Chop = player.get_node("chop")
+	var chop : Chop = get_tree().get_first_node_in_group("chop")
 	chop.now_scale *= 1.1
 	
 func chop_add_attack():
 	print("大刀，加伤")
-	var chop : Chop = player.get_node("chop")
+	var chop : Chop = get_tree().get_first_node_in_group("chop")
 	chop.add_attack += 1
 	
 func chop_add_hp():
 	print("大刀，加血")
-	var chop : Chop = player.get_node("chop")
+	var chop : Chop = get_tree().get_first_node_in_group("chop")
 	chop.add_hp += 1
 
 func bomb_big():
-	var bomb : Bomb = player.get_node("bomb")
+	var bomb : Bomb = get_tree().get_first_node_in_group("bomb")
 	bomb.big(1.2)
 	
 func bomb_hp():
-	var bomb : Bomb = player.get_node("bomb")
-	bomb.add_hp += 4
+	var bomb : Bomb = get_tree().get_first_node_in_group("bomb")
+	bomb.add_hp += 5
 	bomb.add_attack -= 1
 	
 func bomb_fps():
-	var bomb : Bomb = player.get_node("bomb")
+	var bomb : Bomb = get_tree().get_first_node_in_group("bomb")
 	bomb.fast(1.2)
+
+func trap_big():
+	var trap : Trap = get_tree().get_first_node_in_group("trap")
+	trap.set_big(1.2)
+
+func trap_attack_speed():
+	var trap : Trap = get_tree().get_first_node_in_group("trap")
+	trap.set_attack_speed(0.8)
+
+func trap_cd():
+	var trap : Trap = get_tree().get_first_node_in_group("trap")
+	trap.set_cd(0.8)
 	

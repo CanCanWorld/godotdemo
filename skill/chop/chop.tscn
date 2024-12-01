@@ -138,7 +138,7 @@ _data = {
 "attack": SubResource("Animation_46imd")
 }
 
-[node name="chop" type="Node2D"]
+[node name="chop" type="Node2D" groups=["chop"]]
 script = ExtResource("1_q2m0h")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]

@@ -16,6 +16,9 @@ func half_base_exp():
 	player.max_exp /= 2
 	player.base_exp /= 2
 
+func no_attack():
+	player.attack = 0
+
 #持续触发的被动
 func max_hp_to_big():
 	var hp_scale = 1

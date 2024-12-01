@@ -16,7 +16,6 @@ var hp = max_hp
 var isCanWalk = true
 var isDirRight = true
 var isHavePlayer = false
-var isDone = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if isCanWalk && !isDone:
+	if isCanWalk:
 		walk()
 	change_dir()
 	move_and_slide()
@@ -46,19 +45,11 @@ func walk():
 	velocity = dir * speed
 
 func attack():
-	if isDone:
-		return
 	anim.play("attack")
 	velocity = Vector2.ZERO
-	
-func done():
-	print("定身")
-	anim.pause()
-	isDone = true
-	velocity = Vector2.ZERO
-	
 
-func hurted(hurt: int, position: Vector2) -> bool:
+
+func hurted(hurt: int, position: Vector2, flip: bool = false, power: int = 30) -> bool:
 	hp -= hurt
 	hp_bar.value = 100 * hp / max_hp
 	var hurt_text_obj: HurtText = hurt_text.instantiate()
@@ -73,7 +64,10 @@ func hurted(hurt: int, position: Vector2) -> bool:
 			"scale": Vector2(8, 8)
 		})
 		#anim.play("hurt")
-		global_position -= (position - global_position).normalized() * hurt / 10
+		if flip:
+			global_position += (position - global_position).normalized() * power
+		else:
+			global_position -= (position - global_position).normalized() * power
 	else : 
 		#似了
 		#GameMain.anim.play_anim({

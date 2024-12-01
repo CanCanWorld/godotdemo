@@ -1,8 +1,10 @@
 extends CanvasLayer
 
 @onready var bomb_tscn = preload("res://skill/bomb/bomb.tscn")
+@onready var eggs_tscn = preload("res://skill/eggs/eggs.tscn")
 @onready var chop_tscn = preload("res://skill/chop/chop.tscn")
 @onready var rotate_ball_tscn = preload("res://skill/rotateBall/rotate_ball.tscn")
+@onready var trap_tscn = preload("res://skill/trap/trap.tscn")
 
 var player : Player
 var update : SceneUpdate
@@ -35,15 +37,18 @@ func _on_btn_1_pressed() -> void:
 			Passive.max_hp_to_big()
 	))
 	get_tree().paused = false
-	pass # Replace with function body.
 
 #老王
 func _on_btn_2_pressed() -> void:
 	hide()
 	update.chooseWang()
 	player.chooseWang()
+	player.once_passive_callable(Callable(
+		func():
+			Passive.no_attack()
+	))
+	player.add_child(eggs_tscn.instantiate())
 	get_tree().paused = false
-	pass # Replace with function body.
 
 #金山
 func _on_btn_3_pressed() -> void:
@@ -52,7 +57,6 @@ func _on_btn_3_pressed() -> void:
 	player.chooseShan()
 	player.add_child(chop_tscn.instantiate())
 	get_tree().paused = false
-	pass # Replace with function body.
 
 #老汪
 func _on_btn_4_pressed() -> void:
@@ -61,15 +65,11 @@ func _on_btn_4_pressed() -> void:
 	player.chooseWang2()
 	player.add_child(rotate_ball_tscn.instantiate())
 	get_tree().paused = false
-	pass # Replace with function body.
 
 #我
 func _on_btn_5_pressed() -> void:
 	hide()
 	update.chooseMe()
 	player.chooseMe()
-	player.add_child(bomb_tscn.instantiate())
-	player.add_child(chop_tscn.instantiate())
-	player.add_child(rotate_ball_tscn.instantiate())
+	player.add_child(trap_tscn.instantiate())
 	get_tree().paused = false
-	pass # Replace with function body.
