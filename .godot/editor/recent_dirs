@@ -1,9 +1,10 @@
+res://bullet/assets/bullet1
+res://enemy/assets/enemy2
+D:/project/godot/build/windows
 D:/project/godot/godotdemo/output
-D:/software/Android/sdk
 D:/software/Android Studio/jbr
 D:/project/godot/godotdemo/key
 D:/software/Android Studio/jbr/bin
-D:/software/Android
 res://skill/trap/vortex
 res://skill/eggs/egg4
 res://skill/eggs/egg3
@@ -19,9 +20,3 @@ res://player/assets/wang2
 res://player/assets/shan
 res://player/assets/wang
 res://animations
-res://skill/bomb
-res://ui/prepare
-res://ui/end
-res://ui/start
-res://skill/chop
-res://skill/rotateBall/assets

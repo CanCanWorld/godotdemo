@@ -117,6 +117,12 @@ func hp_recovery(recovery: float):
 
 func hurt(attack : float):
 	hp -= attack
+	GameMain.anim.play_anim({
+		"box": self,
+		"ani_name": "enemy_hurt",
+		"position": Vector2.ZERO,
+		"scale": Vector2(4, 4)
+	})
 	
 
 func add_max_hp(value: int): 

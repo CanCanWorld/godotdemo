@@ -1,7 +1,8 @@
 extends BaseNode2D
 class_name NowEnemies
 
-@onready var enemy = preload("res://enemy/enemy.tscn")
+@onready var enemy1 = preload("res://enemy/assets/enemy1/enemy1.tscn")
+@onready var enemy2 = preload("res://enemy/assets/enemy2/enemy2.tscn")
 @onready var timer : Timer = $Timer
 var tileMap : TileMap = null
 
@@ -22,9 +23,20 @@ func set_wait_time(value):
 func _on_timer_timeout() -> void:
 	if get_tree().get_node_count_in_group("enemy") == 100:
 		return
+	add_enemy1()
+	add_enemy2()
+	pass # Replace with function body.
+
+func add_enemy1():
 	var enemy_position = player.global_position
-	var enemyTemp: Enemy = enemy.instantiate()
+	var enemyTemp: Enemy = enemy1.instantiate()
 	add_child(enemyTemp)
 	var dir = randf_range(0, 2 * PI)
 	enemyTemp.global_position = enemy_position + Vector2(1000, 0).rotated(dir)
-	pass # Replace with function body.
+
+func add_enemy2():
+	var enemy_position = player.global_position
+	var enemyTemp: Enemy = enemy2.instantiate()
+	add_child(enemyTemp)
+	var dir = randf_range(0, 2 * PI)
+	enemyTemp.global_position = enemy_position + Vector2(1000, 0).rotated(dir)

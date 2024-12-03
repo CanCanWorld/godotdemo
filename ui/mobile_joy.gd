@@ -21,9 +21,9 @@ func _input(event):
 
 func _process(_delta):
 	if is_press:
-		if (get_local_mouse_position()-out_joy.position).length()>=50:
+		if (get_local_mouse_position()-out_joy.position).length()>=100:
 			out_joy.position=out_pos
-			in_joy.position=out_joy.position-50*(out_joy.position-get_local_mouse_position()).normalized()
+			in_joy.position=out_joy.position-100*(out_joy.position-get_local_mouse_position()).normalized()
 		else :
 			in_joy.position=get_local_mouse_position()
 	else:

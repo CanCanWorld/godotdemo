@@ -43,7 +43,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 	if anim.frame != 15:
 		return
 	for enemy in attack_enemies:
-		var isDead = await enemy.hurted(player.max_hp / 10 + player.attack, global_position)
+		var isDead = await enemy.hurted(player.max_hp / 20 + player.attack, global_position)
 		if isDead:
 			player.add_max_hp(add_hp)
 			player.attack += add_attack

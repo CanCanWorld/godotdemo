@@ -13,12 +13,12 @@ bg_color = Color(1, 0.340975, 0.296558, 1)
 bg_color = Color(0, 0.723932, 0.246459, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_qx18w"]
-radius = 50.0
-height = 100.0
+radius = 100.0
+height = 200.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_ybwmk"]
-radius = 15.0
-height = 30.0
+radius = 30.0
+height = 60.0
 
 [node name="game_ui" type="CanvasLayer"]
 script = ExtResource("1_r4l56")
@@ -171,11 +171,11 @@ grow_vertical = 2
 script = ExtResource("2_4g1ko")
 
 [node name="out_joy" type="MeshInstance2D" parent="Mobile_Joy"]
-modulate = Color(0.415686, 0.419608, 0.419608, 1)
+modulate = Color(0.4158, 0.42, 0.42, 0.372549)
 mesh = SubResource("SphereMesh_qx18w")
 
 [node name="in_joy" type="MeshInstance2D" parent="Mobile_Joy"]
-modulate = Color(0.180392, 0.180392, 0.180392, 1)
+modulate = Color(0, 0, 0, 0.345098)
 mesh = SubResource("SphereMesh_ybwmk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

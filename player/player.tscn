@@ -15,7 +15,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w41wg"]
 shader = ExtResource("2_hfqsa")
-shader_parameter/outline_color = Color(1, 1, 5.376, 1)
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_width = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wteyl"]

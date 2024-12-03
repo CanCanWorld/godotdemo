@@ -5,7 +5,8 @@ extends Node
 @onready var drop_item_tscn = preload("res://drop_item/drop_item.tscn")
 @onready var drop_item : DropItem
 
-
+var game_time = 600
+var now_game_time = game_time
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
