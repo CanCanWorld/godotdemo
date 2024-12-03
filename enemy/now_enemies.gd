@@ -1,8 +1,9 @@
 extends BaseNode2D
 class_name NowEnemies
 
-@onready var enemy1 = preload("res://enemy/assets/enemy1/enemy1.tscn")
-@onready var enemy2 = preload("res://enemy/assets/enemy2/enemy2.tscn")
+@onready var enemy1_tscn = preload("res://enemy/assets/enemy1/enemy1.tscn")
+@onready var enemy2_tscn = preload("res://enemy/assets/enemy2/enemy2.tscn")
+@onready var enemy3_tscn = preload("res://enemy/assets/enemy3/enemy3.tscn")
 @onready var timer : Timer = $Timer
 var tileMap : TileMap = null
 
@@ -23,20 +24,21 @@ func set_wait_time(value):
 func _on_timer_timeout() -> void:
 	if get_tree().get_node_count_in_group("enemy") == 100:
 		return
-	add_enemy1()
-	add_enemy2()
-	pass # Replace with function body.
+	add_enemy(enemy1_tscn)
+	add_enemy(enemy2_tscn)
+	add_enemy(enemy3_tscn)
 
-func add_enemy1():
-	var enemy_position = player.global_position
-	var enemyTemp: Enemy = enemy1.instantiate()
+
+func add_enemy(enemy_tscn: PackedScene):
+	var enemyTemp: Enemy = enemy_tscn.instantiate()
 	add_child(enemyTemp)
 	var dir = randf_range(0, 2 * PI)
-	enemyTemp.global_position = enemy_position + Vector2(1000, 0).rotated(dir)
-
-func add_enemy2():
-	var enemy_position = player.global_position
-	var enemyTemp: Enemy = enemy2.instantiate()
-	add_child(enemyTemp)
-	var dir = randf_range(0, 2 * PI)
-	enemyTemp.global_position = enemy_position + Vector2(1000, 0).rotated(dir)
+	enemyTemp.global_position = player.global_position + Vector2(1000, 0).rotated(dir)
+	if randi_range(1, 10) < 2:
+		enemyTemp.scale *= 2
+		enemyTemp.speed *= 2
+		enemyTemp.max_hp *= 2
+		enemyTemp.hp *= 2
+		enemyTemp.hurt *= 2
+	else :
+		enemyTemp.scale = Vector2.ONE

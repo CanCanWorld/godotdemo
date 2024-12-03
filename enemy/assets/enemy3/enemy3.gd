@@ -1,5 +1,5 @@
 extends Enemy
-class_name Enemy1
+class_name Enemy3
 
 @onready var anim : AnimatedSprite2D = $AnimatedSprite2D
 @onready var hp_bar = $hpBar
@@ -13,6 +13,10 @@ var isDirRight = true
 var isHavePlayer = false
 
 func _ready() -> void:
+	speed *= 0.8
+	hurt *= 1.2
+	max_hp *= 2
+	hp *= 2
 	super._ready()
 
 func _process(delta: float) -> void:
@@ -36,7 +40,10 @@ func walk():
 	velocity = dir * speed
 
 func attack():
-	anim.play("attack")
+	if randi_range(1,2) < 2:
+		anim.play("attack")
+	else:
+		anim.play("attack2")
 	velocity = Vector2.ZERO
 
 
@@ -73,12 +80,13 @@ func hurted(hurt: int, position: Vector2, flip: bool = false, power: int = 30) -
 			"position": global_position,
 			"scale": Vector2(8, 8)
 		})
-		GameMain.drop_item.create_drop_item({
-			"box": get_tree().root,
-			"ani_name": "exp",
-			"position": global_position,
-			"scale": Vector2(3, 3)
-		})
+		for i in 3:
+			GameMain.drop_item.create_drop_item({
+				"box": get_tree().root,
+				"ani_name": "exp",
+				"position": global_position + Vector2(i, i),
+				"scale": Vector2(3, 3)
+			})
 		hp_bar.hide()
 		queue_free()
 		return true
@@ -96,8 +104,8 @@ func _on_attack_effect_area_body_exited(body: Node2D) -> void:
 		isHavePlayer = false
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	if anim.animation == "attack" && anim.frame == 7 && isHavePlayer:
+	if (anim.animation == "attack"||anim.animation == "attack2") && anim.frame == 3 && isHavePlayer:
 		player.hp -= hurt
-	if anim.animation == "attack" && anim.frame == 19:
+	if (anim.animation == "attack"||anim.animation == "attack2") && anim.frame == 8:
 		isCanWalk = true
 		anim.play("run")

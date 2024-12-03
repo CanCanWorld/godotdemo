@@ -9,18 +9,17 @@ class_name Enemy2
 @onready var bullet_tscn = preload("res://bullet/bullet.tscn")
 
 var dir = Vector2.ONE
-var speed = 100
-var max_hp = 1000
-var hurt = 10
-var hp = max_hp
 var isCanWalk = true
 var isDirRight = true
 var isHavePlayer = false
 
 func _ready() -> void:
 	super._ready()
+	speed = speed * 0.8
+	hurt = hurt * 0.5
 
 func _process(delta: float) -> void:
+	anim.flip_v = dir.x < 0
 	if isCanWalk:
 		walk()
 	change_dir()
@@ -28,7 +27,7 @@ func _process(delta: float) -> void:
 	pass
 
 func change_dir():
-	anim.flip_h = dir.x < 0
+	look_at(player.global_position)
 	if dir.x < 0:
 		attack_effect_area.scale.x = -1
 	else :
@@ -79,12 +78,13 @@ func hurted(hurt: int, position: Vector2, flip: bool = false, power: int = 30) -
 			"position": global_position,
 			"scale": Vector2(8, 8)
 		})
-		GameMain.drop_item.create_drop_item({
-			"box": get_tree().root,
-			"ani_name": "exp",
-			"position": global_position,
-			"scale": Vector2(3, 3)
-		})
+		for i in 2:
+			GameMain.drop_item.create_drop_item({
+				"box": get_tree().root,
+				"ani_name": "exp",
+				"position": global_position + Vector2(i, i),
+				"scale": Vector2(3, 3)
+			})
 		hp_bar.hide()
 		queue_free()
 		return true
@@ -107,7 +107,9 @@ func _on_attack_effect_area_body_exited(body: Node2D) -> void:
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if anim.animation == "attack" && anim.frame == 2 && isHavePlayer:
 		var bullet : Bullet = bullet_tscn.instantiate()
-		add_child(bullet)
+		get_tree().root.add_child(bullet)
+		bullet.scale = scale
+		bullet.global_position = global_position
 		bullet.hurt = hurt
 		bullet.dir = (player.global_position - global_position).normalized()
 		

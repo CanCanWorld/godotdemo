@@ -1,8 +1,8 @@
 res://bg_map/bg_map.tscn
 res://base/base_outline.gdshader
 res://drop_item/drop_item_outline.gdshader
-res://player/player_outline.gdshader
 res://enemy/enemy_outline.gdshader
+res://player/player_outline.gdshader
 res://player/player.tscn
 res://enemy/now_enemies.tscn
 res://drop_item/drop_item.tscn
@@ -11,10 +11,11 @@ res://skill/rotateBall/rotate_ball.tscn
 res://ui/prepare/prepare.tscn
 res://enemy/assets/enemy1/enemy1.tscn
 res://enemy/assets/enemy2/enemy2.tscn
-res://enemy/assets/enemy2/enemy2.gd
 res://bullet/bullet.tscn
 res://bullet/bullet.gd
-res://player/player.gd
+res://enemy/assets/enemy2/enemy2.gd
 res://enemy/now_enemies.gd
-res://enemy/assets/enemy1/enemy1.gd
 res://enemy/assets/BaseEnemy.gd
+res://enemy/assets/enemy1/enemy1.gd
+res://enemy/assets/enemy3/enemy3.tscn
+res://enemy/assets/enemy3/enemy3.gd
