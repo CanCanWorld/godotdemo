@@ -24,9 +24,14 @@ func set_wait_time(value):
 func _on_timer_timeout() -> void:
 	if get_tree().get_node_count_in_group("enemy") == 100:
 		return
-	add_enemy(enemy1_tscn)
-	add_enemy(enemy2_tscn)
-	add_enemy(enemy3_tscn)
+	if GameMain.game_time - GameMain.now_game_time < 100:
+		add_enemy(enemy1_tscn)
+	elif GameMain.game_time - GameMain.now_game_time < 200:
+		add_enemy(enemy1_tscn)
+		add_enemy(enemy2_tscn)
+	elif GameMain.game_time - GameMain.now_game_time < 300:
+		add_enemy(enemy2_tscn)
+		add_enemy(enemy3_tscn)
 
 
 func add_enemy(enemy_tscn: PackedScene):
